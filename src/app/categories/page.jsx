@@ -1,6 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
+import CategoryCard from "@/components/CategoryCard";
 import Container from "@/components/Container";
-import Image from "next/image";
 
 const fetchCategories = async () => {
    const res = await fetch(process.env.NEXT_PUBLIC_CATEGORY_URL);
@@ -9,7 +9,7 @@ const fetchCategories = async () => {
 };
 
 export default async function Categories() {
-   const categories = await fetchCategories()
+   const categories = await fetchCategories();
    return (
       <section className="">
          <Container>
@@ -19,7 +19,7 @@ export default async function Categories() {
                <p className="mb-5">Relaxed fits for everyday wear.</p>
                <div className="grid grid-cols-4 gap-5">
                   {categories.map((category) => (
-                     <div key={category.id}><Image src={category.image} alt={category.name} width={265} height={200} /></div>
+                     <CategoryCard key={category.id} category={category} />
                   ))}
                </div>
             </div>

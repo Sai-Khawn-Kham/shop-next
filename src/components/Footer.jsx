@@ -1,13 +1,14 @@
 import React from "react";
 import Container from "./Container";
 import Image from "next/image";
-import { BsX } from "react-icons/bs";
 import Link from "next/link";
 
 const Footer = () => {
    return (
       <footer className="mt-auto">
-         <Container className={"py-20 flex justify-between border-t border-gray-300"}>
+         <Container
+            className={"py-20 flex justify-between border-t border-gray-300"}
+         >
             <div>
                <Image
                   src="/assets/logo.png"

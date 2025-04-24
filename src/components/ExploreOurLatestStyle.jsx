@@ -3,10 +3,10 @@ import React from "react";
 import ProductCard from "./ProductCard";
 
 const fetchProducts = async () => {
-   const res = await fetch(process.env.NEXT_PUBLIC_PRODUCT_URL + "?_limit=4",{
+   const res = await fetch(process.env.NEXT_PUBLIC_PRODUCT_URL + "?_limit=4", {
       next: {
-         tags: ["products"]
-      }
+         tags: ["products"],
+      },
    });
    const json = await res.json();
    return json;
@@ -26,8 +26,12 @@ const ExploreOurLatestStyle = async () => {
             ))}
          </div>
          <div className="text-center">
-            <p className="text-gray-500">Discover all our styles and find the look that’s made for you!</p>
-            <Link href={"/products"} className="underline">View all products</Link>
+            <p className="text-gray-500">
+               Discover all our styles and find the look that’s made for you!
+            </p>
+            <Link href={"/products"} className="underline">
+               View all products
+            </Link>
          </div>
       </div>
    );

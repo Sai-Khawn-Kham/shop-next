@@ -12,7 +12,17 @@ const AddBtn = ({ id }) => {
             disabled={isPending}
             className="w-full border py-1 px-2 rounded-lg bg-gray-950 text-gray-200 flex items-center justify-center gap-2 disabled:opacity-80"
          >
-            {isPending ? (<><BsBag />Add to cart...</>) : <><BsBag />Add to cart</>}
+            {isPending ? (
+               <>
+                  <BsBag />
+                  Add to cart...
+               </>
+            ) : (
+               <>
+                  <BsBag />
+                  Add to cart
+               </>
+            )}
          </button>
       </form>
    );

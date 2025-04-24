@@ -8,20 +8,24 @@ const fetchProducts = async () => {
    return json;
 };
 
-export default async function Categories() {
+export default async function Categories({ params }) {
    const products = await fetchProducts();
+   const current = products.filter((product) => product.category == params.type);
    return (
       <section className="">
          <Container>
-            <Breadcrumb current={"Products"} />
+            <Breadcrumb
+               current={params.type}
+               links={[{ name: "Categories", path: "/categories" }]}
+            />
             <div className="my-20">
-               <h2 className="text-2xl font-bold">All Products</h2>
+               <h2 className="text-2xl font-bold">{params.type}</h2>
                <p className="mb-5">
                   Explore everything we’ve got—styles that match your vibe, your
                   mood, and your life.
                </p>
                <div className="grid grid-cols-4 gap-5">
-                  {products.map((product) => (
+                  {current.map((product) => (
                      <ProductCard key={product.id} product={product} />
                   ))}
                </div>

@@ -1,5 +1,4 @@
-"use server"
-
+"use server";
 const { revalidateTag } = require("next/cache");
 
 const addToCart = async (currentState, formData) => {
@@ -11,15 +10,15 @@ const addToCart = async (currentState, formData) => {
       },
       body: JSON.stringify({
          id: id,
-      })
+      }),
    });
-   if(res.ok){
+   if (res.ok) {
       const json = await res.json();
       revalidateTag("carts");
       return json;
    } else {
       return res.statusText;
    }
-}
+};
 
 export default addToCart;

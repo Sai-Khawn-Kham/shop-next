@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 export default function RootLayout({ children }) {
    return (
       <html lang="en">
-         <body className="min-h-screen">
+         <body className="flex flex-col min-h-screen">
             <Header />
             {children}
             <Footer />

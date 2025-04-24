@@ -18,8 +18,8 @@ const Header = () => {
                />
             </Link>
             <div className="flex gap-3">
-               <div>HOME</div>
-               <div>PRODUCTS</div>
+               <Link href={"/"}>HOME</Link>
+               <Link href={"/products"}>PRODUCTS</Link>
                <div>ABOUT</div>
                <div>FAQ</div>
                <div>CONTACT</div>

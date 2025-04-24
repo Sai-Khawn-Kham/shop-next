@@ -227,5 +227,12 @@
       "category": "Shirts"
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "id": "1"
+    },
+    {
+      "id": "2"
+    }
+  ]
 }

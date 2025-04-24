@@ -16,7 +16,7 @@ const fetchCart = async () => {
 const ProductCard = async ({ product }) => {
    const carts = await fetchCart();
    return (
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 shadow hover:shadow-xl hover:border border-gray-300 rounded-lg overflow-hidden">
          <div>
             <Image src={product.img} alt={product.name} width={365} height={320} />
          </div>

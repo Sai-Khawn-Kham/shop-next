@@ -18,7 +18,7 @@ const Products = async () => {
                </p>
                <div className="grid grid-cols-4 gap-5">
                   {products.map((product) => (
-                     <ProductCard key={product.id} product={product} detail={`/products/${product.category}`} />
+                     <ProductCard key={product.id} product={product} detail={`/products/${product.path}`} />
                   ))}
                </div>
             </div>

@@ -5,3 +5,11 @@
    --color-white-500: #fff;
    --color-black-500: #000;
 }
+
+.hsb {
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+.hsb::-webkit-scrollbar {
+   display: none;
+}

@@ -2,6 +2,7 @@ import { fetchProducts } from "@/actions/fetchProduct";
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import DetailCard from "@/components/DetailCard";
+import YouMayAlsoLike from "@/components/YouMayAlsoLike";
 
 const Details = async ({ params }) => {
    const products = await fetchProducts();
@@ -20,6 +21,7 @@ const Details = async ({ params }) => {
                ]}
             />
             <DetailCard current={current} />
+            <YouMayAlsoLike category={params.type} />
          </Container>
       </>
    );

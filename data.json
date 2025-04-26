@@ -380,6 +380,26 @@
       "color": "white",
       "price": "20,000 MMK",
       "img": "/assets/products/theRitual.png"
+    },
+    {
+      "id": 2,
+      "name": "living nightmare",
+      "quantity": "1",
+      "size": "S",
+      "category": "shirts",
+      "color": "white",
+      "price": "30,000 MMK",
+      "img": "/assets/products/livingNightmare.png"
+    },
+    {
+      "id": 3,
+      "name": "art bag",
+      "quantity": "1",
+      "size": "S",
+      "category": "bags",
+      "color": "white",
+      "price": "25,000 MMK",
+      "img": "/assets/products/artBag.png"
     }
   ]
 }

@@ -4,10 +4,10 @@ import React from "react";
 
 const CategoryCard = ({ category }) => {
    return (
-      <Link href={`/categories/${category.name}`}>
+      <Link href={`/categories/${category.path}`}>
          <Image
             src={category.image}
-            alt={category.name}
+            alt={category.path}
             width={265}
             height={200}
          />

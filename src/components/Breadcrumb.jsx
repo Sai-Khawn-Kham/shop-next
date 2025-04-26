@@ -9,13 +9,13 @@ const Breadcrumb = ({ current, links }) => {
          {links &&
             links.map((link, index) => (
                <span key={index}>
-                  <Link href={link.path}>{link.name}</Link>
+                  <Link href={link.path} className="capitalize">{link.name}</Link>
                   {" / "}
                </span>
             ))}
-         <Link href={"/"} className="text-gray-500">
+         <span className="text-gray-500 capitalize">
             {current}
-         </Link>
+         </span>
       </div>
    );
 };

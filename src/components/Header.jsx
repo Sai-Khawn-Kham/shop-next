@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Header = () => {
    return (
-      <header className="bg-gray-50 py-3">
+      <header className="fixed w-full bg-gray-50 py-3 z-50">
          <Container className={`flex justify-between items-center`}>
             <Link href={"/"}>
                <Image
@@ -20,9 +20,9 @@ const Header = () => {
             <div className="flex gap-3">
                <Link href={"/"}>HOME</Link>
                <Link href={"/products"}>PRODUCTS</Link>
-               <div>ABOUT</div>
-               <div>FAQ</div>
-               <div>CONTACT</div>
+               <Link href={"/about"}>ABOUT</Link>
+               <Link href={"/faq"}>FAQ</Link>
+               <Link href={"/contact"}>CONTACT</Link>
             </div>
             <div className="flex gap-3">
                <BsSearch />

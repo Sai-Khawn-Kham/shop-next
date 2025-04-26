@@ -23,25 +23,25 @@ const Footer = () => {
                <div>
                   <h4 className="font-medium mb-5">Terms & Conditions</h4>
                   <div className="flex flex-col text-gray-500">
-                     <Link href={""}>Return and Refunds</Link>
-                     <Link href={""}>Privacy Policy</Link>
-                     <Link href={""}>Cookie Policy</Link>
+                     <div>Return and Refunds</div>
+                     <div>Privacy Policy</div>
+                     <div>Cookie Policy</div>
                   </div>
                </div>
                <div>
                   <h4 className="font-medium mb-5">Store</h4>
                   <div className="flex flex-col text-gray-500">
-                     <Link href={""}>About</Link>
-                     <Link href={""}>Contact Us</Link>
-                     <Link href={""}>FAQ</Link>
+                     <Link href={"/about"}>About</Link>
+                     <Link href={"/contact"}>Contact Us</Link>
+                     <Link href={"/faq"}>FAQ</Link>
                   </div>
                </div>
                <div>
                   <h4 className="font-medium mb-5">Social</h4>
                   <div className="flex flex-col text-gray-500">
-                     <Link href={""}>Facebook</Link>
-                     <Link href={""}>Instagram</Link>
-                     <Link href={""}>X</Link>
+                     <div>Facebook</div>
+                     <div>Instagram</div>
+                     <div>X</div>
                   </div>
                </div>
             </div>

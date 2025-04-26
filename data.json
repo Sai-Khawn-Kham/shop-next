@@ -1,33 +1,33 @@
 {
-  "categores": [
+  "categories": [
     {
       "id": 1,
-      "name": "Shirts",
+      "path": "shirts",
       "image": "/assets/category/shirts.png"
     },
     {
       "id": 2,
-      "name": "Sweatshirts",
+      "path": "sweatshirts",
       "image": "/assets/category/sweatshirts.png"
     },
     {
       "id": 3,
-      "name": "Hoodies",
+      "path": "hoodies",
       "image": "/assets/category/hoodies.png"
     },
     {
       "id": 4,
-      "name": "Jackets",
+      "path": "jackets",
       "image": "/assets/category/jackets.png"
     },
     {
       "id": 5,
-      "name": "Bags",
+      "path": "bags",
       "image": "/assets/category/bags.png"
     },
     {
       "id": 6,
-      "name": "Caps",
+      "path": "caps",
       "image": "/assets/category/caps.png"
     }
   ],
@@ -35,204 +35,227 @@
     {
       "id": 1,
       "img": "/assets/products/newDawn.png",
-      "fav": false,
-      "name": "New Dawn",
+      "path": "new-dawn",
       "status": "new",
-      "price": [
-        "30,000 MMK"
-      ],
-      "discount": false,
-      "category": "Sweatshirts"
+      "price": {
+        "original": "30,000 MMK",
+        "discount": false
+      },
+      "category": "sweatshirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 2,
       "img": "/assets/products/theRitual.png",
-      "fav": false,
-      "name": "The Ritual",
+      "path": "the-ritual",
       "status": "new",
-      "price": [
-        "35,000 MMK",
-        "20,000 MMK"
-      ],
-      "discount": true,
-      "category": "Shirts"
+      "price": {
+        "original": "35,000 MMK",
+        "discount": "20,000 MMK"
+      },
+      "category": "shirts",
+      "colors": ["white","black"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 3,
       "img": "/assets/products/toteBag.png",
-      "fav": false,
-      "name": "Tote Bag",
+      "path": "tote-bag",
       "status": "new",
-      "price": [
-        "25,000 MMK"
-      ],
-      "discount": false,
-      "category": "Bags"
+      "price": {
+        "original": "25,000 MMK",
+        "discount": false
+      },
+      "category": "bags",
+      "colors": ["black"],
+      "cart": true,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 4,
       "img": "/assets/products/artBag.png",
-      "fav": false,
-      "name": "Art Bag",
+      "path": "art-bag",
       "status": "",
-      "price": [
-        "30,000 MMK",
-        "25,000 MMK"
-      ],
-      "discount": true,
-      "category": "Bags"
+      "price": {
+        "original": "30,000 MMK",
+        "discount": "25,000 MMK"
+      },
+      "category": "bags",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 5,
       "img": "/assets/products/ayeSayPal(calmEdition).png",
-      "fav": false,
-      "name": "Aye Say Pal (sweat shirt)",
+      "path": "aye-say-pal-sweatshirt",
       "status": "",
-      "price": [
-        "35,000 MMK"
-      ],
-      "discount": false,
-      "category": "Sweatshirts"
+      "price": {
+        "original": "35,000 MMK",
+        "discount": false
+      },
+      "category": "sweatshirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 6,
       "img": "/assets/products/ayeSayPal(original).png",
-      "fav": false,
-      "name": "Aye Say Pal",
+      "path": "aye-say-pal-hoodies",
       "status": "",
-      "price": [
-        "40,000 MMK"
-      ],
-      "discount": false,
-      "category": "Hoodies"
+      "price": {
+        "original": "40,000 MMK",
+        "discount": false
+      },
+      "category": "hoodies",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 7,
       "img": "/assets/products/livingNightmare.png",
-      "fav": false,
-      "name": "Living Nightmare",
+      "path": "living-nightmare",
       "status": "",
-      "price": [
-        "30,000 MMK"
-      ],
-      "discount": false,
-      "category": "Shirts"
+      "price": {
+        "original": "30,000 MMK",
+        "discount": false
+      },
+      "category": "shirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 8,
       "img": "/assets/products/pufferJacket.png",
-      "fav": false,
-      "name": "Puffer Jacket",
+      "path": "puffer-jacket",
       "status": "",
-      "price": [
-        "35,000 MMK"
-      ],
-      "discount": false,
-      "category": "Jackets"
+      "price": {
+        "original": "35,000 MMK",
+        "discount": false
+      },
+      "category": "jackets",
+      "colors": ["black"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 9,
       "img": "/assets/products/bennie.png",
-      "fav": false,
-      "name": "Bennie",
+      "path": "bennie",
       "status": "",
-      "price": [
-        "40,000 MMK"
-      ],
-      "discount": false,
-      "category": "Caps"
+      "price": {
+        "original": "40,000 MMK",
+        "discount": false
+      },
+      "category": "caps",
+      "colors": ["yellow"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 10,
       "img": "/assets/products/toteBag2.png",
-      "fav": false,
-      "name": "Tote Bag 2",
+      "path": "tote-bag-2",
       "status": "new",
-      "price": [
-        "35,000 MMK"
-      ],
-      "discount": false,
-      "category": "Bags"
+      "price": {
+        "original": "35,000 MMK",
+        "discount": false
+      },
+      "category": "bags",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 11,
       "img": "/assets/products/sunsetVibe.png",
-      "fav": false,
-      "name": "Sunset Vibe",
+      "path": "sunset-vibe",
       "status": "new",
-      "price": [
-        "30,000 MMK"
-      ],
-      "discount": false,
-      "category": "Shirts"
+      "price": {
+        "original": "30,000 MMK",
+        "discount": false
+      },
+      "category": "shirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 12,
       "img": "/assets/products/chillModeGraphicTee.png",
-      "fav": false,
-      "name": "Chill Mode Graphic Tee",
+      "path": "chill-mode-graphic-tee",
       "status": "",
-      "price": [
-        "30,000 MMK"
-      ],
-      "discount": false,
-      "category": "Shirts"
+      "price": {
+        "original": "30,000 MMK",
+        "discount": false
+      },
+      "category": "shirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 13,
       "img": "/assets/products/classicComfortShirt.png",
-      "fav": false,
-      "name": "Class Comfort Shirt",
+      "path": "classic-comfort-shirt",
       "status": "",
-      "price": [
-        "40,000 MMK"
-      ],
-      "discount": false,
-      "category": "Shirts"
+      "price": {
+        "original": "40,000 MMK",
+        "discount": false
+      },
+      "category": "shirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 14,
       "img": "/assets/products/boldVibeTee.png",
-      "fav": false,
-      "name": "Bold Vibes Tee",
+      "path": "bold-vibes-tee",
       "status": "",
-      "price": [
-        "35,000 MMK"
-      ],
-      "discount": false,
-      "category": "Shirts"
+      "price": {
+        "original": "35,000 MMK",
+        "discount": false
+      },
+      "category": "shirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 15,
       "img": "/assets/products/urbanLegendsTee.png",
-      "fav": false,
-      "name": "Urban Legends Tee",
+      "path": "urban-legends-tee",
       "status": "",
-      "price": [
-        "35,000 MMK"
-      ],
-      "discount": false,
-      "category": "Shirts"
+      "price": {
+        "original": "35,000 MMK",
+        "discount": false
+      },
+      "category": "shirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     },
     {
       "id": 16,
       "img": "/assets/products/ayeSayPal(shirt).png",
-      "fav": false,
-      "name": "Aye Say Pal (shirt)",
+      "path": "aye-say-pal-shirt",
       "status": "",
-      "price": [
-        "35,000 MMK"
-      ],
+      "price": {
+        "original": "35,000 MMK",
+        "discount": false
+      },
       "discount": false,
-      "category": "Shirts"
-    }
-  ],
-  "carts": [
-    {
-      "id": "1"
-    },
-    {
-      "id": "2"
+      "category": "shirts",
+      "colors": ["white"],
+      "cart": false,
+      "sizes": ["S","M","L","XL"]
     }
   ]
 }

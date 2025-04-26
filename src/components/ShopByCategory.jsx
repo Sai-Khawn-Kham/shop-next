@@ -3,13 +3,14 @@ import React from "react";
 import CategoryCard from "./CategoryCard";
 
 const fetchCategories = async () => {
-   const res = await fetch(process.env.NEXT_PUBLIC_CATEGORY_URL + "?_limit=4");
+   const res = await fetch(process.env.NEXT_PUBLIC_CATEGORY_URL);
    const json = await res.json();
    return json;
 };
 
 const ShopByCategory = async () => {
    const categories = await fetchCategories();
+   const current = categories.slice(0,4);
    return (
       <div className="my-20">
          <h2 className="uppercase font-bold">shop by category</h2>
@@ -18,7 +19,7 @@ const ShopByCategory = async () => {
             moment.
          </p>
          <div className="grid grid-cols-4 gap-5 mb-5">
-            {categories.map((category) => (
+            {current.map((category) => (
                <CategoryCard key={category.id} category={category} />
             ))}
          </div>

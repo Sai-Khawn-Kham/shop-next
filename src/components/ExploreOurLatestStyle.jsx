@@ -1,19 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import ProductCard from "./ProductCard";
-
-const fetchProducts = async () => {
-   const res = await fetch(process.env.NEXT_PUBLIC_PRODUCT_URL + "?_limit=4", {
-      next: {
-         tags: ["products"],
-      },
-   });
-   const json = await res.json();
-   return json;
-};
+import { fetchProducts } from "@/actions/fetchProduct";
 
 const ExploreOurLatestStyle = async () => {
    const products = await fetchProducts();
+   const current = products.slice(0,4);
    return (
       <div className="my-20">
          <h2 className=" uppercase font-bold">explore our latest styles</h2>
@@ -21,8 +13,8 @@ const ExploreOurLatestStyle = async () => {
             Find clothes that match your vibe and make every day better.
          </p>
          <div className="grid grid-cols-4 gap-5 mb-5">
-            {products.map((product) => (
-               <ProductCard key={product.id} product={product} />
+            {current.map((product) => (
+               <ProductCard key={product.id} product={product} detail={`/products/${product.path}`} />
             ))}
          </div>
          <div className="text-center">

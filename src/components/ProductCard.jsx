@@ -38,7 +38,7 @@ const ProductCard = ({ product, detail }) => {
             </span>
             <span className="font-medium">{product.price.discount}</span>
          </p>
-         <AddBtn id={product.id} cart={product.cart} />
+         {/* <AddBtn id={product.id} cart={product.cart} /> */}
       </div>
    );
 };

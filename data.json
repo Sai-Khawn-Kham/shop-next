@@ -42,9 +42,16 @@
         "discount": false
       },
       "category": "sweatshirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 2,
@@ -56,9 +63,16 @@
         "discount": "20,000 MMK"
       },
       "category": "shirts",
-      "colors": ["white","black"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 3,
@@ -70,9 +84,16 @@
         "discount": false
       },
       "category": "bags",
-      "colors": ["black"],
-      "cart": true,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 4,
@@ -84,9 +105,16 @@
         "discount": "25,000 MMK"
       },
       "category": "bags",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 5,
@@ -98,9 +126,16 @@
         "discount": false
       },
       "category": "sweatshirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 6,
@@ -112,9 +147,16 @@
         "discount": false
       },
       "category": "hoodies",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 7,
@@ -126,9 +168,16 @@
         "discount": false
       },
       "category": "shirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 8,
@@ -140,9 +189,16 @@
         "discount": false
       },
       "category": "jackets",
-      "colors": ["black"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 9,
@@ -154,9 +210,16 @@
         "discount": false
       },
       "category": "caps",
-      "colors": ["yellow"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "yellow"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 10,
@@ -168,9 +231,16 @@
         "discount": false
       },
       "category": "bags",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 11,
@@ -182,9 +252,16 @@
         "discount": false
       },
       "category": "shirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 12,
@@ -196,9 +273,16 @@
         "discount": false
       },
       "category": "shirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 13,
@@ -210,9 +294,16 @@
         "discount": false
       },
       "category": "shirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 14,
@@ -224,9 +315,16 @@
         "discount": false
       },
       "category": "shirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 15,
@@ -238,9 +336,16 @@
         "discount": false
       },
       "category": "shirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
       "id": 16,
@@ -253,9 +358,28 @@
       },
       "discount": false,
       "category": "shirts",
-      "colors": ["white"],
-      "cart": false,
-      "sizes": ["S","M","L","XL"]
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "name": "the ritual",
+      "quantity": "1",
+      "size": "M",
+      "category": "shirts",
+      "color": "white",
+      "price": "20,000 MMK",
+      "img": "/assets/products/theRitual.png"
     }
   ]
 }

@@ -6,7 +6,6 @@ import YouMayAlsoLike from '@/components/YouMayAlsoLike'
 import React from 'react'
 
 const Details = async ({params}) => {
-  console.log(params.detail);
    const products = await fetchProducts();
    const current = products.filter((product) => product.path == params.detail)[0];
   return (

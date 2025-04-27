@@ -1,13 +1,16 @@
 "use client";
 import useCartStore from "@/store/useCartStore";
+import useWishListStore from "@/store/useWishListStore";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { BsHeart } from "react-icons/bs";
 
 const ProductCard = ({ product, detail }) => {
    // const [state, formAction, isPending] = useActionState(addToCart);
    const router = useRouter();
    const { carts, addToCart } = useCartStore();
+   const { wishLists, addToWishList } = useWishListStore();
 
    const handleRoute = (e) => {
       router.push(detail);
@@ -24,7 +27,20 @@ const ProductCard = ({ product, detail }) => {
          color: product.colors[0],
          price: product.price,
          img: product.img,
-         total: (product.price.discount?product.price.discount.replace(/[^\d]/g,""):product.price.original.replace(/[^\d]/g,""))*1
+         total: (product.price.discount?product.price.discount.replace(/[^\d]/g,""):product.price.original.replace(/[^\d]/g,""))
+      })
+   }
+
+   const handleAddToWishList = (e) => {
+      e.stopPropagation()
+      addToWishList({
+         id: wishLists.length+1,
+         name: product.path,
+         size: "S",
+         category: product.category,
+         color: product.colors[0],
+         price: product.price,
+         img: product.img
       })
    }
    return (
@@ -33,13 +49,16 @@ const ProductCard = ({ product, detail }) => {
          onClick={handleRoute}
          className="flex flex-col gap-2 shadow hover:shadow-xl border border-gray-300 hover:border-gray-400 rounded-lg overflow-hidden cursor-pointer"
       >
-         <div>
+         <div className="relative inline-block">
             <Image
                src={product.img}
                alt={product.path}
                width={365}
                height={320}
             />
+            <div onClick={handleAddToWishList} className="absolute -top-0 -right-0 border border-gray-500 rounded-lg text-gray-500 p-1 flex justify-center items-center">
+               <BsHeart />
+            </div>
          </div>
          <div className="px-2">
             <div className="relative inline-block">

@@ -31,7 +31,7 @@ const CartCard = ({ cart }) => {
             <div className="text-gray-500 flex gap-3">
                <p>Size: {cart.size}</p>
                <div className="flex items-center gap-1">
-                  Color: <div className={`size-4 bg-${cart.color}-500 rounded border border-gray-300`}></div>
+                  Color: <div style={{backgroundColor: cart.color}} className={`size-4 rounded border border-gray-300`}></div>
                </div>
             </div>
             <div className="flex gap-0.5">

@@ -25,7 +25,7 @@ const Cart = () => {
                </p>
                <div className="grid grid-cols-12 gap-5">
                   <div className="col-span-8 border border-gray-300 rounded px-2">
-                     <div className="grid grid-cols-4 text-sm font-semibold text-gray-500 py-2 px-2">
+                     <div className="grid grid-cols-4 text-sm font-semibold text-gray-500 p-2">
                         <p className="col-span-2">PRODUCT</p>
                         <p className="text-end">PRICE</p>
                         <p className="text-end">TOTAL</p>

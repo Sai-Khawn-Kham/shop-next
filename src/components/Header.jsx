@@ -3,6 +3,8 @@ import Container from "@/components/Container";
 import Image from "next/image";
 import { BsSearch, BsHeart, BsBag, BsPerson } from "react-icons/bs";
 import Link from "next/link";
+import HeaderCart from "./HeaderCart";
+import HeaderWishList from "./HeaderWishList";
 
 const Header = () => {
    return (
@@ -26,8 +28,14 @@ const Header = () => {
             </div>
             <div className="flex gap-3">
                <BsSearch />
-               <Link href={"/wishlist"}><BsHeart /></Link>
-               <Link href={"/cart"}><BsBag /></Link>
+               <Link href={"/wishlist"} className="relative inline-block">
+                  <BsHeart />
+                  <HeaderWishList />
+               </Link>
+               <Link href={"/cart"} className="relative inline-block">
+                  <BsBag />
+                  <HeaderCart />
+               </Link>
                <BsPerson />
             </div>
          </Container>

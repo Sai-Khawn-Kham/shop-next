@@ -5,11 +5,13 @@ const CartCard = ({ cart }) => {
    const { quantityIncrease, quantityDecrease, removeFromCart, calSubTotal, calShipping, calTax, calNetTotal } = useCartStore();
 
    const handleDecrease = () => {
-      quantityDecrease(cart.id)
-      calSubTotal()
-      calShipping()
-      calTax()
-      calNetTotal()
+      if(cart.quantity>1){
+         quantityDecrease(cart.id)
+         calSubTotal()
+         calShipping()
+         calTax()
+         calNetTotal()
+      }
    }
    const handleIncrease = () => {
       quantityIncrease(cart.id)
@@ -33,9 +35,9 @@ const CartCard = ({ cart }) => {
                </div>
             </div>
             <div className="flex gap-0.5">
-               <button onClick={handleDecrease} className="bg-gray-300 size-5 border border-gray-300 rounded flex justify-center items-center">-</button>
+               <button onClick={handleDecrease} className="bg-gray-300 size-5 border border-gray-300 rounded flex justify-center items-center cursor-pointer">-</button>
                <span className="bg-gray-300 h-5 w-7 border border-gray-300 rounded flex justify-center items-center">{cart.quantity}</span>
-               <button onClick={handleIncrease} className="bg-gray-300 size-5 border border-gray-300 rounded flex justify-center items-center">+</button>
+               <button onClick={handleIncrease} className="bg-gray-300 size-5 border border-gray-300 rounded flex justify-center items-center cursor-pointer">+</button>
             </div>
             <div onClick={handleRemove} className="text-gray-500 hover:underline">remove</div>
          </div>

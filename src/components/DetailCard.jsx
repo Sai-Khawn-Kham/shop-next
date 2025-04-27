@@ -13,7 +13,9 @@ const DetailCard = ({ current }) => {
    const [ selected, setSelected ] = useState("")
 
    const handleDecrease = () => {
-      setQuantity(quantity - 1);
+      if(quantity > 1){
+         setQuantity(quantity - 1);
+      }
    };
 
    const handleIncrease = () => {
@@ -113,14 +115,14 @@ const DetailCard = ({ current }) => {
                <div className="flex">
                   <div
                      onClick={handleDecrease}
-                     className="border border-gray-400 rounded px-2"
+                     className="border border-gray-400 rounded px-2 cursor-pointer"
                   >
                      -
                   </div>
                   <span className="w-10 text-center">{quantity}</span>
                   <div
                      onClick={handleIncrease}
-                     className="border border-gray-400 rounded px-2"
+                     className="border border-gray-400 rounded px-2 cursor-pointer"
                   >
                      +
                   </div>

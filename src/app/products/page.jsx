@@ -10,7 +10,7 @@ const Products = async () => {
       <>
          <Container>
             <Breadcrumb current={"Products"} />
-            <div className="my-20">
+            <div className="my-10">
                <h2 className="text-2xl font-bold">All Products</h2>
                <p className="mb-5">
                   Explore everything we’ve got—styles that match your vibe, your

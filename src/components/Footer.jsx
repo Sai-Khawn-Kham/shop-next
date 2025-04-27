@@ -7,7 +7,7 @@ const Footer = () => {
    return (
       <footer className="mt-auto">
          <Container
-            className={"py-20 flex justify-between border-t border-gray-300"}
+            className={"py-5 flex justify-between border-t border-gray-300"}
          >
             <div>
                <Image
@@ -46,7 +46,7 @@ const Footer = () => {
                </div>
             </div>
          </Container>
-         <div className="mt-auto bg-gray-950 text-gray-50 flex justify-center items-center py-2">
+         <div className="mt-auto bg-gray-950 text-gray-50 flex justify-center items-center py-1.5">
             <div>
                Copy Right © 2025{" "}
                <a href="mms-it.com" className="hover:underline">

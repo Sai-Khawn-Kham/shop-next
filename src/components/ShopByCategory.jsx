@@ -12,7 +12,7 @@ const ShopByCategory = async () => {
    const categories = await fetchCategories();
    const current = categories.slice(0,4);
    return (
-      <div className="my-20">
+      <div className="my-10">
          <h2 className="uppercase font-bold">shop by category</h2>
          <p className="text-gray-500 mb-3">
             Explore our collections and find the perfect pieces for every

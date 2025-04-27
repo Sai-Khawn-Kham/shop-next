@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
          <body className="flex flex-col min-h-screen">
             <Header />
-            <section className="mt-14">{children}</section>
+            <section className="mt-12">{children}</section>
             <Footer />
          </body>
       </html>

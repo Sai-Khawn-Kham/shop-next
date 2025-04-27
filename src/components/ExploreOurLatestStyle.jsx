@@ -7,7 +7,7 @@ const ExploreOurLatestStyle = async () => {
    const products = await fetchProducts();
    const current = products.slice(0,4);
    return (
-      <div className="my-20">
+      <div className="my-10">
          <h2 className=" uppercase font-bold">explore our latest styles</h2>
          <p className="text-gray-500 mb-3">
             Find clothes that match your vibe and make every day better.

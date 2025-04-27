@@ -1,14 +1,16 @@
 "use client";
-import addToCart from "@/actions/addToCart";
+import useCartStore from "@/store/useCartStore";
 import Image from "next/image";
-import React, { useActionState, useState } from "react";
+import React, { useState } from "react";
 import { BsCheck } from "react-icons/bs";
 
 const DetailCard = ({ current }) => {
    const [quantity, setQuantity] = useState(0);
    const [colorChoose, setColorChoose] = useState("");
    const [colorBg, setColorBg] = useState("");
-   const [state, formAction, isPending] = useActionState(addToCart);
+   // const [state, formAction, isPending] = useActionState(addToCart);
+   const { carts, addToCart } = useCartStore();
+   const [ selected, setSelected ] = useState("")
 
    const handleDecrease = () => {
       setQuantity(quantity - 1);
@@ -17,8 +19,29 @@ const DetailCard = ({ current }) => {
    const handleIncrease = () => {
       setQuantity(quantity + 1);
    };
+
+   const handleSelect = (e) => {
+      setSelected(e.target.value)
+   }
+
+   const handleAddToCart = () => {
+      addToCart({
+         id: carts.length+1,
+         name: current.path,
+         quantity: quantity,
+         size: selected,
+         category: current.category,
+         color: colorChoose,
+         price: current.price,
+         img: current.img,
+         total: (current.price.discount?current.price.discount.replace(/[^\d]/g,""):current.price.original.replace(/[^\d]/g,""))*quantity
+      })
+   }
    return (
-      <form action={formAction} className="my-20 grid grid-cols-2 gap-16">
+      <div
+         // action={formAction}
+         className="my-10 grid grid-cols-2 gap-16"
+      >
          <div>
             <Image
                src={current.img}
@@ -74,6 +97,8 @@ const DetailCard = ({ current }) => {
                <p className="mb-1">Size</p>
                <select
                   name="size"
+                  value={selected}
+                  onChange={handleSelect}
                   className="border border-gray-400 rounded focus:outline-none"
                >
                   {current.sizes.map((size, index) => (
@@ -101,30 +126,18 @@ const DetailCard = ({ current }) => {
                   </div>
                </div>
             </div>
-            <input
-               type="hidden"
-               name="name"
-               value={current.path.replaceAll("-", " ")}
-            />
+            {/* <input type="hidden" name="name" value={current.path.replaceAll("-", " ")} />
             <input type="hidden" name="quantity" value={quantity} />
             <input type="hidden" name="category" value={current.category} />
             <input type="hidden" name="color" value={colorChoose} />
-            <input
-               type="hidden"
-               name="price"
-               value={
-                  current.price.discount
-                     ? current.price.discount
-                     : current.price.original
-               }
-            />
-            <input type="hidden" name="img" value={current.img} />
+            <input type="hidden" name="price" value={current.price.discount ? current.price.discount : current.price.original} />
+            <input type="hidden" name="img" value={current.img} /> */}
             <p>{current.description}</p>
-            <button className="bg-gray-950 text-gray-50 py-1 rounded">
-               {isPending ? "Add to Cart..." : "Add to Cart"}
+            <button onClick={handleAddToCart} className="bg-gray-950 text-gray-50 py-1 rounded">
+               Add to Cart
             </button>
          </div>
-      </form>
+      </div>
    );
 };
 

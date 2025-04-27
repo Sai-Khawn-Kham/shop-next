@@ -1,23 +1,35 @@
 "use client";
-import addToCart from "@/actions/addToCart";
+import useCartStore from "@/store/useCartStore";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useActionState } from "react";
+import React from "react";
 
 const ProductCard = ({ product, detail }) => {
-   const [state, formAction, isPending] = useActionState(addToCart);
+   // const [state, formAction, isPending] = useActionState(addToCart);
    const router = useRouter();
+   const { carts, addToCart } = useCartStore();
 
    const handleRoute = (e) => {
       router.push(detail);
    };
 
-   const handlePropagation = (e) => {
+   const handleAddToCart = (e) => {
       e.stopPropagation();
-   };
+      addToCart({
+         id: carts.length+1,
+         name: product.path,
+         quantity: 1,
+         size: "S",
+         category: product.category,
+         color: product.colors[0],
+         price: product.price,
+         img: product.img,
+         total: (product.price.discount?product.price.discount.replace(/[^\d]/g,""):product.price.original.replace(/[^\d]/g,""))*1
+      })
+   }
    return (
-      <form
-         action={formAction}
+      <div
+         // action={formAction}
          onClick={handleRoute}
          className="flex flex-col gap-2 shadow hover:shadow-xl border border-gray-300 hover:border-gray-400 rounded-lg overflow-hidden cursor-pointer"
       >
@@ -51,20 +63,20 @@ const ProductCard = ({ product, detail }) => {
             </span>
             <span className="font-medium">{product.price.discount}</span>
          </p>
-         <input type="hidden" name="name" value={product.path.replaceAll("-"," ")} />
+         {/* <input type="hidden" name="name" value={product.path.replaceAll("-"," ")} />
          <input type="hidden" name="quantity" value={1} />
          <input type="hidden" name="size" value={"S"} />
          <input type="hidden" name="category" value={product.category} />
          <input type="hidden" name="color" value={product.colors[0]} />
          <input type="hidden" name="price" value={product.price.discount?product.price.discount:product.price.original} />
-         <input type="hidden" name="img" value={product.img} />
+         <input type="hidden" name="img" value={product.img} /> */}
          <button
-            onClick={handlePropagation}
+            onClick={handleAddToCart}
             className="w-full border py-1 px-2 bg-gray-950 text-gray-200 flex items-center justify-center gap-2 disabled:opacity-80 cursor-pointer"
          >
-            {isPending ? "Add to Cart..." : "Add to Cart"}
+            Add to Cart
          </button>
-      </form>
+      </div>
    );
 };
 

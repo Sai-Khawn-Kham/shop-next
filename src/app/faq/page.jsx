@@ -1,16 +1,17 @@
-import { fetchFaq } from "@/actions/fetchFaq";
+"use client"
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import FaqCard from "@/components/FaqCard";
+import useFaqStore from "@/store/useFaqStore";
 import React from "react";
 
-const Faq = async () => {
-   const faqs = await fetchFaq();
+const Faq = () => {
+   const {faqs} = useFaqStore();
    return (
       <>
          <Container>
             <Breadcrumb current={"FAQ"} />
-            <div className="my-20 grid grid-cols-2">
+            <div className="my-10 grid grid-cols-2">
                <div>
                   <h1 className="text-3xl font-bold uppercase">FAQ</h1>
                   <p className="text-gray-500">
@@ -19,7 +20,7 @@ const Faq = async () => {
                   </p>
                </div>
             </div>
-            <div className="my-20 grid grid-cols-2 gap-5">
+            <div className="my-10 grid grid-cols-2 gap-5">
                {faqs.map((faq) => <FaqCard key={faq.id} faq={faq} />)}
             </div>
          </Container>

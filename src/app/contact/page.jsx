@@ -8,7 +8,7 @@ const Contact = () => {
       <>
          <Container>
             <Breadcrumb current={"Contact"} />
-            <div className="my-20">
+            <div className="my-10">
                <h2 className="font-bold text-3xl uppercase">
                   get in touch with us
                </h2>
@@ -50,7 +50,7 @@ const Contact = () => {
                   </div>
                </div>
             </div>
-            <div className="my-20">
+            <div className="my-10">
                <Image
                   src="/assets/map.png"
                   width={1120}

@@ -13,7 +13,7 @@ export default async function Type({ params }) {
                current={params.type}
                links={[{ name: "Categories", path: "/categories" }]}
             />
-            <div className="my-20">
+            <div className="my-10">
                <h2 className="text-2xl font-bold mb-5 capitalize">{params.type}</h2>
                {/* <p className="mb-5">
                   Explore everything we’ve got—styles that match your vibe, your

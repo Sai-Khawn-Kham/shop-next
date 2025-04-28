@@ -1,9 +1,11 @@
 "use client"
+
 import React from "react";
 import useCartStore from "@/store/useCartStore";
 
 const HeaderCart = () => {
    const { carts } = useCartStore();
+   
    return (
       <>
          {carts.length > 0 && (

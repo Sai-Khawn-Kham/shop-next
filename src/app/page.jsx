@@ -2,8 +2,9 @@ import Container from "@/components/Container";
 import HeroSection from "@/components/HeroSection";
 import ExploreOurLatestStyle from "@/components/ExploreOurLatestStyle";
 import ShopByCategory from "@/components/ShopByCategory";
+import React from "react";
 
-export default function Home() {
+const Home = () => {
    return (
       <>
          <HeroSection />
@@ -13,4 +14,6 @@ export default function Home() {
          </Container>
       </>
    );
-}
+};
+
+export default Home;

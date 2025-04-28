@@ -6,21 +6,19 @@ import YouMayAlsoLike from "@/components/YouMayAlsoLike";
 
 const Details = async ({ params }) => {
    const products = await fetchProducts();
-   const current = products.filter((product) => product.path == params.slug)[0];
+   const product = products.find((product) => product.path == params.slug);
+   
    return (
       <>
          <Container>
             <Breadcrumb
-               current={current.path.replaceAll("-", " ")}
+               current={product.path.replaceAll("-", " ")}
                links={[
                   { name: "Categories", path: "/categories" },
-                  {
-                     name: current.category,
-                     path: `/categories/${current.category}`,
-                  },
+                  { name: product.category, path: `/categories/${product.category}`},
                ]}
             />
-            <DetailCard current={current} />
+            <DetailCard product={product} />
             <YouMayAlsoLike category={params.type} />
          </Container>
       </>

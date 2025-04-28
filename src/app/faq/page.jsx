@@ -1,4 +1,5 @@
 "use client"
+
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import FaqCard from "@/components/FaqCard";
@@ -7,6 +8,7 @@ import React from "react";
 
 const Faq = () => {
    const {faqs} = useFaqStore();
+   
    return (
       <>
          <Container>
@@ -20,7 +22,7 @@ const Faq = () => {
                   </p>
                </div>
             </div>
-            <div className="my-10 grid grid-cols-2 gap-5">
+            <div className="my-10">
                {faqs.map((faq) => <FaqCard key={faq.id} faq={faq} />)}
             </div>
          </Container>

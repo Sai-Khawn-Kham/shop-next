@@ -1,15 +1,12 @@
+"use client"
+
 import Link from "next/link";
 import React from "react";
 import CategoryCard from "./CategoryCard";
+import useCategoryStore from "@/store/useCategoryStore";
 
-const fetchCategories = async () => {
-   const res = await fetch(process.env.NEXT_PUBLIC_CATEGORY_URL);
-   const json = await res.json();
-   return json;
-};
-
-const ShopByCategory = async () => {
-   const categories = await fetchCategories();
+const ShopByCategory = () => {
+   const { categories } = useCategoryStore()
    const current = categories.slice(0,4);
    return (
       <div className="my-10">
@@ -27,7 +24,7 @@ const ShopByCategory = async () => {
             <p className="text-gray-500">
                Explore Our Collection – Find Exactly What You’re Looking For
             </p>
-            <Link href={"/categories"} className="underline">
+            <Link href={"/categories"} className="underline hover:text-gray-700 active:text-cyan-500">
                View all categories
             </Link>
          </div>

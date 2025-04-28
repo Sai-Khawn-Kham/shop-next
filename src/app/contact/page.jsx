@@ -1,9 +1,21 @@
+"use client";
+
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 const Contact = () => {
+   const nameRef = useRef(null);
+   const telRef = useRef(null);
+   const messageRef = useRef(null);
+
+   const handleClick = () => {
+      nameRef.current.value = "";
+      telRef.current.value = "";
+      messageRef.current.value = "";
+   };
+
    return (
       <>
          <Container>
@@ -29,7 +41,7 @@ const Contact = () => {
                      <h3 className="font-semibold">Call us</h3>
                      <p className="text-gray-500">Need Help? Call Us Now!</p>
                      <p className="text-cyan-500 hover:underline cursor-pointer">
-                        +95 945 6789 120
+                        +95 9 876 543210
                      </p>
                      <hr className="border-t-gray-500 mt-3 mb-5" />
 
@@ -43,10 +55,30 @@ const Contact = () => {
                      </p>
                   </div>
                   <div className="flex flex-col gap-5">
-                     <input type="text" className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Name" />
-                     <input type="tel" className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Phone Number" />
-                     <input type="textarea" className="grow text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Message" />
-                     <button className="bg-gray-950 text-gray-50 text-sm font-semibold py-1.5 rounded">Send Message</button>
+                     <input
+                        ref={nameRef}
+                        type="text"
+                        className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded"
+                        placeholder="Name"
+                     />
+                     <input
+                        ref={telRef}
+                        type="tel"
+                        className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded"
+                        placeholder="Phone Number"
+                     />
+                     <input
+                        ref={messageRef}
+                        type="textarea"
+                        className="grow text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded"
+                        placeholder="Message"
+                     />
+                     <button
+                        onClick={handleClick}
+                        className="bg-gray-900 hover:bg-gray-800 active:bg-gray-600 text-gray-50 text-sm font-semibold py-1.5 rounded cursor-pointer"
+                     >
+                        Send Message
+                     </button>
                   </div>
                </div>
             </div>

@@ -4,18 +4,13 @@ import React from "react";
 const Breadcrumb = ({ current, links }) => {
    return (
       <div className="border-b border-gray-300 py-2">
-         <Link href={"/"}>Home</Link>
+         <Link className="hover:underline active:text-cyan-500" href={"/"}>Home</Link>
          {" / "}
-         {links &&
-            links.map((link, index) => (
-               <span key={index}>
-                  <Link href={link.path} className="capitalize">{link.name}</Link>
-                  {" / "}
-               </span>
-            ))}
-         <span className="text-gray-500 capitalize">
-            {current}
-         </span>
+         {links && links.map((link, index) => (
+            <Link key={index} href={link.path} className="capitalize hover:underline active:text-cyan-500">{link.name}</Link>
+         ))}
+         {links && " / "}
+         <span className="text-gray-500 capitalize">{current}</span>
       </div>
    );
 };

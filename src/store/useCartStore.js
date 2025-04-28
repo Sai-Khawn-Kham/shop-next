@@ -8,8 +8,8 @@ const useCartStore = create((set) => ({
    netTotal: 0,
    addToCart: (newCart) => set((state) => ({ carts: [ ...state.carts, newCart ]})),
    removeFromCart: (cartId) => set((state) => ({ carts: state.carts.filter((el) => el.id !== cartId)})),
-   quantityDecrease: (cartId) => set((state) => ({ carts: state.carts.map((el) => el.id == cartId ? { ...el, quantity: el.quantity-1, total: ((el.quantity-1)*((el.price.discount ? el.price.discount.replace(/[^\d]/g,"") : el.price.original.replace(/[^\d]/g,""))))} : el)})),
-   quantityIncrease: (cartId) => set((state) => ({ carts: state.carts.map((el) => el.id == cartId ? { ...el, quantity: el.quantity+1, total: ((el.quantity+1)*((el.price.discount ? el.price.discount.replace(/[^\d]/g,"") : el.price.original.replace(/[^\d]/g,""))))} : el)})),
+   quantityDecrease: (cartId) => set((state) => ({ carts: state.carts.map((el) => el.id == cartId ? { ...el, quantity: el.quantity-1, total: ((el.quantity-1)*((el.price.discount ? el.price.discount : el.price.original)))} : el)})),
+   quantityIncrease: (cartId) => set((state) => ({ carts: state.carts.map((el) => el.id == cartId ? { ...el, quantity: el.quantity+1, total: ((el.quantity+1)*((el.price.discount ? el.price.discount : el.price.original)))} : el)})),
    calSubTotal: () => set((state) => ({ subTotal: state.carts.reduce((prev,curr) => {
       const key = Object.keys(curr).find((el) => el.startsWith('total'))
       const total = key ? curr[key] : 0

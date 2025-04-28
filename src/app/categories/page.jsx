@@ -2,9 +2,11 @@ import fetchCategories from "@/actions/fetchCategory";
 import Breadcrumb from "@/components/Breadcrumb";
 import CategoryCard from "@/components/CategoryCard";
 import Container from "@/components/Container";
+import React from "react";
 
-export default async function Categories() {
+const Categories = async () => {
    const categories = await fetchCategories();
+
    return (
       <>
          <Container>
@@ -21,4 +23,6 @@ export default async function Categories() {
          </Container>
       </>
    );
-}
+};
+
+export default Categories;

@@ -1,27 +1,26 @@
-import { fetchProducts } from '@/actions/fetchProduct'
-import Breadcrumb from '@/components/Breadcrumb'
-import Container from '@/components/Container'
-import DetailCard from '@/components/DetailCard'
-import YouMayAlsoLike from '@/components/YouMayAlsoLike'
-import React from 'react'
+import { fetchProducts } from "@/actions/fetchProduct";
+import Breadcrumb from "@/components/Breadcrumb";
+import Container from "@/components/Container";
+import DetailCard from "@/components/DetailCard";
+import YouMayAlsoLike from "@/components/YouMayAlsoLike";
+import React from "react";
 
-const Details = async ({params}) => {
+const Details = async ({ params }) => {
    const products = await fetchProducts();
-   const current = products.filter((product) => product.path == params.detail)[0];
-  return (
-    <>
-      <Container>
+   const product = products.find((product) => product.path == params.detail);
+
+   return (
+      <>
+         <Container>
             <Breadcrumb
-               current={current.path.replaceAll("-", " ")}
-               links={[
-                  { name: "Products", path: "/products" }
-               ]}
+               current={product.path.replaceAll("-", " ")}
+               links={[{ name: "Products", path: "/products" }]}
             />
-            <DetailCard current={current} />
+            <DetailCard product={product} />
             <YouMayAlsoLike category={params.type} />
          </Container>
-    </>
-  )
-}
+      </>
+   );
+};
 
-export default Details
+export default Details;

@@ -1,36 +1,4 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "path": "shirts",
-      "image": "/assets/category/shirts.png"
-    },
-    {
-      "id": 2,
-      "path": "sweatshirts",
-      "image": "/assets/category/sweatshirts.png"
-    },
-    {
-      "id": 3,
-      "path": "hoodies",
-      "image": "/assets/category/hoodies.png"
-    },
-    {
-      "id": 4,
-      "path": "jackets",
-      "image": "/assets/category/jackets.png"
-    },
-    {
-      "id": 5,
-      "path": "bags",
-      "image": "/assets/category/bags.png"
-    },
-    {
-      "id": 6,
-      "path": "caps",
-      "image": "/assets/category/caps.png"
-    }
-  ],
   "products": [
     {
       "id": 1,
@@ -38,12 +6,12 @@
       "path": "new-dawn",
       "status": "new",
       "price": {
-        "original": "30,000 MMK",
+        "original": 30000,
         "discount": false
       },
       "category": "sweatshirts",
       "colors": [
-        "white"
+        "white","black"
       ],
       "sizes": [
         "S",
@@ -59,8 +27,8 @@
       "path": "the-ritual",
       "status": "new",
       "price": {
-        "original": "35,000 MMK",
-        "discount": "20,000 MMK"
+        "original": 35000,
+        "discount": 20000
       },
       "category": "shirts",
       "colors": [
@@ -80,7 +48,7 @@
       "path": "tote-bag",
       "status": "new",
       "price": {
-        "original": "25,000 MMK",
+        "original": 25000,
         "discount": false
       },
       "category": "bags",
@@ -101,8 +69,8 @@
       "path": "art-bag",
       "status": "",
       "price": {
-        "original": "30,000 MMK",
-        "discount": "25,000 MMK"
+        "original": 30000,
+        "discount": 25000
       },
       "category": "bags",
       "colors": [
@@ -122,7 +90,7 @@
       "path": "aye-say-pal-sweatshirt",
       "status": "",
       "price": {
-        "original": "35,000 MMK",
+        "original": 35000,
         "discount": false
       },
       "category": "sweatshirts",
@@ -143,7 +111,7 @@
       "path": "aye-say-pal-hoodies",
       "status": "",
       "price": {
-        "original": "40,000 MMK",
+        "original": 40000,
         "discount": false
       },
       "category": "hoodies",
@@ -164,7 +132,7 @@
       "path": "living-nightmare",
       "status": "",
       "price": {
-        "original": "30,000 MMK",
+        "original": 30000,
         "discount": false
       },
       "category": "shirts",
@@ -185,7 +153,7 @@
       "path": "puffer-jacket",
       "status": "",
       "price": {
-        "original": "35,000 MMK",
+        "original": 35000,
         "discount": false
       },
       "category": "jackets",
@@ -206,7 +174,7 @@
       "path": "bennie",
       "status": "",
       "price": {
-        "original": "40,000 MMK",
+        "original": 40000,
         "discount": false
       },
       "category": "caps",
@@ -227,7 +195,7 @@
       "path": "tote-bag-2",
       "status": "new",
       "price": {
-        "original": "35,000 MMK",
+        "original": 35000,
         "discount": false
       },
       "category": "bags",
@@ -248,7 +216,7 @@
       "path": "sunset-vibe",
       "status": "new",
       "price": {
-        "original": "30,000 MMK",
+        "original": 30000,
         "discount": false
       },
       "category": "shirts",
@@ -269,7 +237,7 @@
       "path": "chill-mode-graphic-tee",
       "status": "",
       "price": {
-        "original": "30,000 MMK",
+        "original": 30000,
         "discount": false
       },
       "category": "shirts",
@@ -290,7 +258,7 @@
       "path": "classic-comfort-shirt",
       "status": "",
       "price": {
-        "original": "40,000 MMK",
+        "original": 40000,
         "discount": false
       },
       "category": "shirts",
@@ -311,7 +279,7 @@
       "path": "bold-vibes-tee",
       "status": "",
       "price": {
-        "original": "35,000 MMK",
+        "original": 35000,
         "discount": false
       },
       "category": "shirts",
@@ -332,7 +300,7 @@
       "path": "urban-legends-tee",
       "status": "",
       "price": {
-        "original": "35,000 MMK",
+        "original": 35000,
         "discount": false
       },
       "category": "shirts",
@@ -353,7 +321,7 @@
       "path": "aye-say-pal-shirt",
       "status": "",
       "price": {
-        "original": "35,000 MMK",
+        "original": 35000,
         "discount": false
       },
       "discount": false,

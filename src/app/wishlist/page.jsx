@@ -1,4 +1,5 @@
 "use client"
+
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import WishListCard from "@/components/WishListCard";
@@ -7,7 +8,7 @@ import React from "react";
 
 const Wishlist = () => {
    const { wishLists } = useWishListStore();
-   console.log(wishLists);
+   
    return (
       <>
          <Container>

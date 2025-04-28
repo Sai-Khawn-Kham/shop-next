@@ -1,5 +1,8 @@
 import useCartStore from "@/store/useCartStore";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import Swal from "sweetalert2";
 
 const CartCard = ({ cart }) => {
    const { quantityIncrease, quantityDecrease, removeFromCart, calSubTotal, calShipping, calTax, calNetTotal } = useCartStore();
@@ -7,12 +10,27 @@ const CartCard = ({ cart }) => {
    const handleDecrease = () => {
       if(cart.quantity>1){
          quantityDecrease(cart.id)
-         calSubTotal()
-         calShipping()
-         calTax()
-         calNetTotal()
+      } else {
+         Swal.fire({
+            title: "Remove product from Cart?",
+            text: "Are you sure to remove!",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Delete",
+            confirmButtonColor: "#444",
+            cancelButtonColor: "#888"
+         }).then((result) => {
+            if(result.isConfirmed){
+               removeFromCart(cart.id)
+            }
+         })
       }
+      calSubTotal()
+      calShipping()
+      calTax()
+      calNetTotal()
    }
+
    const handleIncrease = () => {
       quantityIncrease(cart.id)
       calSubTotal()
@@ -20,16 +38,36 @@ const CartCard = ({ cart }) => {
       calTax()
       calNetTotal()
    }
-   const handleRemove = () => removeFromCart(cart.id)
+   
+   const handleRemove = () => {
+      Swal.fire({
+         title: "Remove product from Cart?",
+         text: "Are you sure to remove!",
+         icon: "question",
+         showCancelButton: true,
+         confirmButtonText: "Delete",
+         confirmButtonColor: "#444",
+         cancelButtonColor: "#888"
+      }).then((result) => {
+         if(result.isConfirmed){
+            removeFromCart(cart.id)
+            calSubTotal()
+            calShipping()
+            calTax()
+            calNetTotal()
+         }
+      })
+   }
+
    return (
-      <div className="grid grid-cols-4 px-2 py-4 border-t border-t-gray-300">
-         <div>
-            <img src={cart.img} alt={cart.name} className="w-28" />
-         </div>
+      <div className="grid grid-cols-4 gap-3 px-2 py-4 border-t border-t-gray-300">
+         <Link href={`/products/${cart.path}`}>
+            <Image src={cart.img} width={123} height={149} alt={cart.path} className="w-full" />
+         </Link>
          <div className="flex flex-col justify-between">
-            <h3 className="font-semibold capitalize">{cart.name.replaceAll("-"," ")}</h3>
-            <div className="text-gray-500 flex gap-3">
-               <p>Size: {cart.size}</p>
+            <h3 className="font-semibold capitalize">{cart.path.replaceAll("-"," ")}</h3>
+            <div className="text-gray-500 flex gap-2">
+               <p>Size: <span className="text-sm">{cart.size}</span></p>
                <div className="flex items-center gap-1">
                   Color: <div style={{backgroundColor: cart.color}} className={`size-4 rounded border border-gray-300`}></div>
                </div>
@@ -39,15 +77,17 @@ const CartCard = ({ cart }) => {
                <span className="bg-gray-300 h-5 w-7 border border-gray-300 rounded flex justify-center items-center">{cart.quantity}</span>
                <button onClick={handleIncrease} className="bg-gray-300 size-5 border border-gray-300 rounded flex justify-center items-center cursor-pointer">+</button>
             </div>
-            <div onClick={handleRemove} className="text-gray-500 hover:underline">remove</div>
+            <div>
+               <button onClick={handleRemove} className="text-gray-500 hover:underline hover:text-red-800 cursor-pointer">remove</button>
+            </div>
          </div>
          <div className="text-end">
-            <p className={`${cart.price.discount&&"text-gray-500 line-through"}`}>{cart.price.original}</p>
-            <p>{cart.price.discount}</p>
+            <p className={`${cart.price.discount&&"text-gray-500 line-through"}`}>{cart.price.original.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}</p>
+            <p>{cart.price.discount&&cart.price.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}</p>
          </div>
          <div>
             <p className="text-end">
-               {cart.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")} MMK
+               {cart.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}
             </p>
          </div>
       </div>

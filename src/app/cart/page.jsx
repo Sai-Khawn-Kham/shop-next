@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import Breadcrumb from "@/components/Breadcrumb";
 import CartCard from "@/components/CartCard";
 import Container from "@/components/Container";
@@ -6,14 +7,25 @@ import useCartStore from "@/store/useCartStore";
 import React, { useEffect } from "react";
 
 const Cart = () => {
-   const { carts, subTotal, calSubTotal, shipping, calShipping, tax, calTax, netTotal, calNetTotal } = useCartStore();
+   const {
+      carts,
+      subTotal,
+      calSubTotal,
+      shipping,
+      calShipping,
+      tax,
+      calTax,
+      netTotal,
+      calNetTotal,
+   } = useCartStore();
 
    useEffect(() => {
-      calSubTotal()
-      calShipping()
-      calTax()
-      calNetTotal()
-   },[])
+      calSubTotal();
+      calShipping();
+      calTax();
+      calNetTotal();
+   }, []);
+
    return (
       <>
          <Container>
@@ -44,23 +56,25 @@ const Cart = () => {
                         <h2 className="font-bold">Order Summary</h2>
                         <div className="flex justify-between items-center">
                            <p>Subtotal</p>
-                           <p>{(subTotal).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")} MMK</p>
+                           <p>{subTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                         </div>
                         <div className="flex justify-between items-center">
                            <p>Shipping</p>
-                           <p>{shipping.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")} MMK</p>
+                           <p>{shipping.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                         </div>
                         <div className="flex justify-between items-center">
                            <p>Tax</p>
-                           <p>{tax.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")} MMK</p>
+                           <p>{tax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                         </div>
                      </div>
                      <div className="flex flex-col border-t border-t-gray-300">
                         <div className="flex justify-between my-2">
                            <p>Total</p>
-                           <p>{netTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")} MMK</p>
+                           <p>{netTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                         </div>
-                        <button className="bg-gray-950 text-gray-50 py-1 rounded">Process to checkout</button>
+                        <button className="bg-gray-950 text-gray-50 py-1 rounded">
+                           Process to checkout
+                        </button>
                      </div>
                   </div>
                </div>

@@ -6,6 +6,7 @@ import { fetchProducts } from "@/actions/fetchProduct";
 
 const Products = async () => {
    const products = await fetchProducts();
+   
    return (
       <>
          <Container>

@@ -62,7 +62,13 @@ const CartCard = ({ cart }) => {
    return (
       <div className="grid grid-cols-4 gap-3 px-2 py-4 border-t border-t-gray-300">
          <Link href={`/products/${cart.path}`}>
-            <Image src={cart.img} width={123} height={149} alt={cart.path} className="w-full" />
+            <Image
+               src={cart.img}
+               width={123}
+               height={149}
+               alt={cart.path}
+               className="w-full border border-gray-300 hover:border-gray-400 active:border-cyan-500 rounded"
+            />
          </Link>
          <div className="flex flex-col justify-between">
             <h3 className="font-semibold capitalize">{cart.path.replaceAll("-"," ")}</h3>

@@ -1,11 +1,13 @@
-import fetchCategories from "@/actions/fetchCategory";
+"use client"
+
 import Breadcrumb from "@/components/Breadcrumb";
 import CategoryCard from "@/components/CategoryCard";
 import Container from "@/components/Container";
+import useCategoryStore from "@/store/useCategoryStore";
 import React from "react";
 
-const Categories = async () => {
-   const categories = await fetchCategories();
+const Categories = () => {
+   const { categories } = useCategoryStore();
 
    return (
       <>

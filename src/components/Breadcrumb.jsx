@@ -7,9 +7,11 @@ const Breadcrumb = ({ current, links }) => {
          <Link className="hover:underline active:text-cyan-500" href={"/"}>Home</Link>
          {" / "}
          {links && links.map((link, index) => (
-            <Link key={index} href={link.path} className="capitalize hover:underline active:text-cyan-500">{link.name}</Link>
+            <span key={index}>
+               <Link href={link.path} className="capitalize hover:underline active:text-cyan-500">{link.name}</Link>
+               {' / '}
+            </span>
          ))}
-         {links && " / "}
          <span className="text-gray-500 capitalize">{current}</span>
       </div>
    );

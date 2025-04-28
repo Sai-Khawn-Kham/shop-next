@@ -67,10 +67,9 @@ const Contact = () => {
                         className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded"
                         placeholder="Phone Number"
                      />
-                     <input
+                     <textarea
                         ref={messageRef}
-                        type="textarea"
-                        className="grow text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded"
+                        className="text-sm placeholder:text-gray-500 py-1.5 px-3 py-0.5 border border-gray-300 rounded grow hsb"
                         placeholder="Message"
                      />
                      <button

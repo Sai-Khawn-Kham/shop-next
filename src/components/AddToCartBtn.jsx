@@ -1,5 +1,5 @@
 import React from "react";
-import useCartStore from "@/store/useCartStore";
+import useCartsStore from "@/store/useCartsStore";
 import Swal from "sweetalert2";
 
 const AddToCartBtn = ({
@@ -9,7 +9,7 @@ const AddToCartBtn = ({
    className = "",
    quantity = 1,
 }) => {
-   const { carts, addToCart, quantityIncrease } = useCartStore();
+   const { carts, addCart, quantityIncrease } = useCartsStore();
    const addedItem = carts.find((cart) => cart.path == product.path && cart.size == size && cart.color == color);
 
    const handleAddToCart = (e) => {
@@ -29,7 +29,7 @@ const AddToCartBtn = ({
             }
          });
       } else {
-         addToCart({
+         addCart({
             id: carts.length + 1,
             path: product.path,
             quantity: quantity,

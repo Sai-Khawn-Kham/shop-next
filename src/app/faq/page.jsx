@@ -3,11 +3,11 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import FaqCard from "@/components/FaqCard";
-import useFaqStore from "@/store/useFaqStore";
+import useFaqsStore from "@/store/useFaqsStore";
 import React from "react";
 
 const Faq = () => {
-   const {faqs} = useFaqStore();
+   const {faqs} = useFaqsStore();
    
    return (
       <>

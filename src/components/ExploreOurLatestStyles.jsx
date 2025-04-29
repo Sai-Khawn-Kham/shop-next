@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import ProductCard from "./ProductCard";
-import { fetchProducts } from "@/actions/fetchProduct";
+import fetchProducts from "@/actions/fetchProducts";
 
-const ExploreOurLatestStyle = async () => {
+const ExploreOurLatestStyles = async () => {
    const products = await fetchProducts();
    const current = products.slice(0,4);
    
@@ -30,4 +30,4 @@ const ExploreOurLatestStyle = async () => {
    );
 };
 
-export default ExploreOurLatestStyle;
+export default ExploreOurLatestStyles;

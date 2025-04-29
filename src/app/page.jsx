@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import HeroSection from "@/components/HeroSection";
-import ExploreOurLatestStyle from "@/components/ExploreOurLatestStyle";
+import ExploreOurLatestStyles from "@/components/ExploreOurLatestStyles";
 import ShopByCategory from "@/components/ShopByCategory";
 import React from "react";
 
@@ -10,7 +10,7 @@ const Home = () => {
          <HeroSection />
          <Container>
             <ShopByCategory />
-            <ExploreOurLatestStyle />
+            <ExploreOurLatestStyles />
          </Container>
       </>
    );

@@ -1,6 +1,6 @@
 const { create } = require("zustand");
 
-const useFaqStore = create((set) => ({
+const useFaqsStore = create((set) => ({
    faqs: [
       {
         id:1,
@@ -42,4 +42,4 @@ const useFaqStore = create((set) => ({
    openFaq: (faqId) => set((state) => ({ faqs: state.faqs.map((faq) => faq.id == faqId ? { ...faq, open:!faq.open } : { ...faq, open:false })}))
 }))
 
-export default useFaqStore;
+export default useFaqsStore;

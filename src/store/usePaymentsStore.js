@@ -1,6 +1,6 @@
 const { create } = require("zustand");
 
-const usePaymentStore = create((set) => ({
+const usePaymentsStore = create((set) => ({
    payments: [
       {
          name: "payment",
@@ -20,4 +20,4 @@ const usePaymentStore = create((set) => ({
    ]
 }))
 
-export default usePaymentStore;
+export default usePaymentsStore;

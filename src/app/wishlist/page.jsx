@@ -3,11 +3,11 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import WishListCard from "@/components/WishListCard";
-import useWishListStore from "@/store/useWishListStore";
+import useWishListsStore from "@/store/useWishListsStore";
 import React from "react";
 
 const Wishlist = () => {
-   const { wishLists } = useWishListStore();
+   const { wishLists } = useWishListsStore();
    
    return (
       <>

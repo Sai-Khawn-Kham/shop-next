@@ -3,7 +3,7 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import CartCard from "@/components/CartCard";
 import Container from "@/components/Container";
-import useCartStore from "@/store/useCartStore";
+import useCartsStore from "@/store/useCartsStore";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import Swal from "sweetalert2";
@@ -20,7 +20,7 @@ const Cart = () => {
       calTax,
       netTotal,
       calNetTotal,
-   } = useCartStore();
+   } = useCartsStore();
 
    useEffect(() => {
       calSubTotal();

@@ -3,11 +3,11 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import CategoryCard from "@/components/CategoryCard";
 import Container from "@/components/Container";
-import useCategoryStore from "@/store/useCategoryStore";
+import useCategoriesStore from "@/store/useCategoriesStore";
 import React from "react";
 
 const Categories = () => {
-   const { categories } = useCategoryStore();
+   const { categories } = useCategoriesStore();
 
    return (
       <>

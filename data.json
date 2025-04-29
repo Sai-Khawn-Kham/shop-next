@@ -5,20 +5,10 @@
       "img": "/assets/products/newDawn.png",
       "path": "new-dawn",
       "status": "new",
-      "price": {
-        "original": 30000,
-        "discount": false
-      },
+      "price": {"original":30000, "discount":false},
       "category": "sweatshirts",
-      "colors": [
-        "white","black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white","black"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -26,20 +16,10 @@
       "img": "/assets/products/theRitual.png",
       "path": "the-ritual",
       "status": "new",
-      "price": {
-        "original": 35000,
-        "discount": 20000
-      },
+      "price": {"original":35000, "discount":20000},
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -47,20 +27,10 @@
       "img": "/assets/products/toteBag.png",
       "path": "tote-bag",
       "status": "new",
-      "price": {
-        "original": 25000,
-        "discount": false
-      },
+      "price": {"original":25000, "discount":false},
       "category": "bags",
-      "colors": [
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -68,20 +38,10 @@
       "img": "/assets/products/artBag.png",
       "path": "art-bag",
       "status": "",
-      "price": {
-        "original": 30000,
-        "discount": 25000
-      },
+      "price": {"original":30000, "discount":25000},
       "category": "bags",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -89,20 +49,10 @@
       "img": "/assets/products/ayeSayPal(calmEdition).png",
       "path": "aye-say-pal-sweatshirt",
       "status": "",
-      "price": {
-        "original": 35000,
-        "discount": false
-      },
+      "price": {"original":35000, "discount":false},
       "category": "sweatshirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -110,20 +60,10 @@
       "img": "/assets/products/ayeSayPal(original).png",
       "path": "aye-say-pal-hoodies",
       "status": "",
-      "price": {
-        "original": 40000,
-        "discount": false
-      },
+      "price": {"original":40000, "discount":false},
       "category": "hoodies",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -131,20 +71,10 @@
       "img": "/assets/products/livingNightmare.png",
       "path": "living-nightmare",
       "status": "",
-      "price": {
-        "original": 30000,
-        "discount": false
-      },
+      "price": {"original":30000, "discount":false},
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -152,20 +82,10 @@
       "img": "/assets/products/pufferJacket.png",
       "path": "puffer-jacket",
       "status": "",
-      "price": {
-        "original": 35000,
-        "discount": false
-      },
+      "price": {"original":35000, "discount":false},
       "category": "jackets",
-      "colors": [
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -173,20 +93,10 @@
       "img": "/assets/products/bennie.png",
       "path": "bennie",
       "status": "",
-      "price": {
-        "original": 40000,
-        "discount": false
-      },
+      "price": {"original":40000, "discount":false},
       "category": "caps",
-      "colors": [
-        "yellow"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["yellow"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -194,20 +104,10 @@
       "img": "/assets/products/toteBag2.png",
       "path": "tote-bag-2",
       "status": "new",
-      "price": {
-        "original": 35000,
-        "discount": false
-      },
+      "price": {"original":35000, "discount":false},
       "category": "bags",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -215,20 +115,10 @@
       "img": "/assets/products/sunsetVibe.png",
       "path": "sunset-vibe",
       "status": "new",
-      "price": {
-        "original": 30000,
-        "discount": false
-      },
+      "price": {"original":30000, "discount":false},
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -236,20 +126,10 @@
       "img": "/assets/products/chillModeGraphicTee.png",
       "path": "chill-mode-graphic-tee",
       "status": "",
-      "price": {
-        "original": 30000,
-        "discount": false
-      },
+      "price": {"original":30000, "discount":false},
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -257,20 +137,10 @@
       "img": "/assets/products/classicComfortShirt.png",
       "path": "classic-comfort-shirt",
       "status": "",
-      "price": {
-        "original": 40000,
-        "discount": false
-      },
+      "price": {"original":40000, "discount":false},
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -278,20 +148,10 @@
       "img": "/assets/products/boldVibeTee.png",
       "path": "bold-vibes-tee",
       "status": "",
-      "price": {
-        "original": 35000,
-        "discount": false
-      },
+      "price": {"original":35000, "discount":false},
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -299,20 +159,10 @@
       "img": "/assets/products/urbanLegendsTee.png",
       "path": "urban-legends-tee",
       "status": "",
-      "price": {
-        "original": 35000,
-        "discount": false
-      },
+      "price": {"original":35000, "discount":false},
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     },
     {
@@ -320,21 +170,11 @@
       "img": "/assets/products/ayeSayPal(shirt).png",
       "path": "aye-say-pal-shirt",
       "status": "",
-      "price": {
-        "original": 35000,
-        "discount": false
-      },
+      "price": {"original":35000, "discount":false},
       "discount": false,
       "category": "shirts",
-      "colors": [
-        "white"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["white"],
+      "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     }
   ]

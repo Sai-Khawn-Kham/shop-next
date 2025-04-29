@@ -2,7 +2,7 @@ import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import ProductCard from "@/components/ProductCard";
-import { fetchProducts } from "@/actions/fetchProduct";
+import fetchProducts from "@/actions/fetchProducts";
 
 const Products = async () => {
    const products = await fetchProducts();

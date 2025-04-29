@@ -1,9 +1,9 @@
-import useFaqStore from "@/store/useFaqStore";
+import useFaqsStore from "@/store/useFaqsStore";
 import React from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 
 const FaqCard = ({ faq }) => {
-   const { openFaq } = useFaqStore();
+   const { openFaq } = useFaqsStore();
 
    const handleOpen = () => {
       openFaq(faq.id);

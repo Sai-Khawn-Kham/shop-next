@@ -3,10 +3,10 @@
 import Link from "next/link";
 import React from "react";
 import CategoryCard from "./CategoryCard";
-import useCategoryStore from "@/store/useCategoryStore";
+import useCategoriesStore from "@/store/useCategoriesStore";
 
 const ShopByCategory = () => {
-   const { categories } = useCategoryStore()
+   const { categories } = useCategoriesStore()
    const current = categories.slice(0,4);
    return (
       <div className="my-10">

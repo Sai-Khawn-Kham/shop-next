@@ -1,10 +1,10 @@
 "use client"
 
 import React from "react";
-import useCartStore from "@/store/useCartStore";
+import useCartsStore from "@/store/useCartsStore";
 
 const HeaderCart = () => {
-   const { carts } = useCartStore();
+   const { carts } = useCartsStore();
    
    return (
       <>

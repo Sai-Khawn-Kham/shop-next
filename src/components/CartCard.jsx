@@ -1,11 +1,11 @@
-import useCartStore from "@/store/useCartStore";
+import useCartsStore from "@/store/useCartsStore";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Swal from "sweetalert2";
 
 const CartCard = ({ cart }) => {
-   const { quantityIncrease, quantityDecrease, removeFromCart, calSubTotal, calShipping, calTax, calNetTotal } = useCartStore();
+   const { quantityIncrease, quantityDecrease, removeCart, calSubTotal, calShipping, calTax, calNetTotal } = useCartsStore();
 
    const handleDecrease = () => {
       if(cart.quantity>1){
@@ -21,7 +21,7 @@ const CartCard = ({ cart }) => {
             cancelButtonColor: "#888"
          }).then((result) => {
             if(result.isConfirmed){
-               removeFromCart(cart.id)
+               removeCart(cart.id)
             }
          })
       }
@@ -50,7 +50,7 @@ const CartCard = ({ cart }) => {
          cancelButtonColor: "#888"
       }).then((result) => {
          if(result.isConfirmed){
-            removeFromCart(cart.id)
+            removeCart(cart.id)
             calSubTotal()
             calShipping()
             calTax()

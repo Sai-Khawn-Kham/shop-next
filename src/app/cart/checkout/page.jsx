@@ -2,13 +2,13 @@
 
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
-import useCartStore from "@/store/useCartStore";
-import usePaymentStore from "@/store/usePaymentStore";
-import React, { useRef, useState } from "react";
+import useCartsStore from "@/store/useCartsStore";
+import usePaymentsStore from "@/store/usePaymentsStore";
+import React from "react";
 
 const Checkout = () => {
-   const { carts, subTotal, shipping, tax, netTotal } = useCartStore();
-   const { payments } = usePaymentStore();
+   const { carts, subTotal, shipping, tax, netTotal } = useCartsStore();
+   const { payments } = usePaymentsStore();
 
    return (
       <>

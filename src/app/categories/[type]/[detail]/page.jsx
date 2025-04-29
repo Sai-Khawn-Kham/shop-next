@@ -1,13 +1,13 @@
-import { fetchProducts } from "@/actions/fetchProduct";
+import fetchProducts from "@/actions/fetchProducts";
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import DetailCard from "@/components/DetailCard";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike";
 
-const Details = async ({ params }) => {
+const Detail = async ({ params }) => {
    const products = await fetchProducts();
-   const product = products.find((product) => product.path == params.slug);
-   
+   const product = products.find((product) => product.path == params.detail);
+
    return (
       <>
          <Container>
@@ -25,4 +25,4 @@ const Details = async ({ params }) => {
    );
 };
 
-export default Details;
+export default Detail;

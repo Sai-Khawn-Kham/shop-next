@@ -1,15 +1,15 @@
 "use client";
 
-import useWishListStore from "@/store/useWishListStore";
+import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
-import { BsHeart, BsHeartFill } from "react-icons/bs";
-import AddToCartBtn from "./AddToCartBtn";
 import toast from "react-hot-toast";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
+import useWishListsStore from "@/store/useWishListsStore";
+import AddToCartBtn from "./AddToCartBtn";
 
 const ProductCard = ({ product, detail }) => {
-   const { wishLists, addToWishList } = useWishListStore();
+   const { wishLists, addToWishList } = useWishListsStore();
    const router = useRouter();
 
    const handleRoute = (e) => {

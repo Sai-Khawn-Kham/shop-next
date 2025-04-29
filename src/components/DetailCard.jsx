@@ -1,6 +1,6 @@
 "use client";
 
-import useWishListStore from "@/store/useWishListStore";
+import useWishListsStore from "@/store/useWishListsStore";
 import Image from "next/image";
 import React, { useState } from "react";
 import { BsCheck, BsHeart, BsHeartFill } from "react-icons/bs";
@@ -11,7 +11,7 @@ const DetailCard = ({ product }) => {
    const [quantity, setQuantity] = useState(1);
    const [colorChoose, setColorChoose] = useState(product.colors[0]);
    const [ selected, setSelected ] = useState("S")
-   const { wishLists, addToWishList } = useWishListStore();
+   const { wishLists, addToWishList } = useWishListsStore();
 
    const handleDecrease = () => {
       if(quantity > 1){

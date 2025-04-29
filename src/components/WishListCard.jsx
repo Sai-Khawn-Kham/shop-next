@@ -1,4 +1,4 @@
-import useWishListStore from "@/store/useWishListStore";
+import useWishListsStore from "@/store/useWishListsStore";
 import React, { useState } from "react";
 import AddToCartBtn from "./AddToCartBtn";
 import Link from "next/link";
@@ -9,7 +9,7 @@ import Image from "next/image";
 const WishListCard = ({wishList}) => {
    const [sizeChoose,setSizeChoose] = useState("S")
    const [colorChoose,setColorChoose] = useState(wishList.colors[0])
-   const { removeFromWishList } = useWishListStore()
+   const { removeFromWishList } = useWishListsStore()
    
    const handleRemove = () => {
       Swal.fire({

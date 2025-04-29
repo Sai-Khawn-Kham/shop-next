@@ -1,38 +1,38 @@
 const { create } = require("zustand");
 
-const useCategoryStore = create((set) => ({
+const useCategoriesStore = create((set) => ({
    categories: [
       {
         id: 1,
         path: "shirts",
-        img: "/assets/category/shirts.png"
+        img: "/assets/categories/shirts.png"
       },
       {
         id: 2,
         path: "sweatshirts",
-        img: "/assets/category/sweatshirts.png"
+        img: "/assets/categories/sweatshirts.png"
       },
       {
         id: 3,
         path: "hoodies",
-        img: "/assets/category/hoodies.png"
+        img: "/assets/categories/hoodies.png"
       },
       {
         id: 4,
         path: "jackets",
-        img: "/assets/category/jackets.png"
+        img: "/assets/categories/jackets.png"
       },
       {
         id: 5,
         path: "bags",
-        img: "/assets/category/bags.png"
+        img: "/assets/categories/bags.png"
       },
       {
         id: 6,
         path: "caps",
-        img: "/assets/category/caps.png"
+        img: "/assets/categories/caps.png"
       }
    ]
 }))
 
-export default useCategoryStore;
+export default useCategoriesStore;

@@ -1,10 +1,10 @@
 "use client";
 
-import useWishListStore from "@/store/useWishListStore";
+import useWishListsStore from "@/store/useWishListsStore";
 import React from "react";
 
 const HeaderWishList = () => {
-   const { wishLists } = useWishListStore();
+   const { wishLists } = useWishListsStore();
 
    return (
       <>

@@ -1,10 +1,10 @@
-import { fetchProducts } from "@/actions/fetchProduct";
 import React from "react";
 import ProductCard from "./ProductCard";
+import fetchProducts from "@/actions/fetchProducts";
 
 const YouMayAlsoLike = async ({category}) => {
    const products = await fetchProducts();
-   const current = products.filter((product) => product.status=="new").slice(0,4)
+   const current = products.filter((product) => product.category==category).slice(0,4)
    return (
       <div className="my-10">
          <h1 className=" uppercase font-bold">you may also like</h1>

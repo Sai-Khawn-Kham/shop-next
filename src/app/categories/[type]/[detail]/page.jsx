@@ -1,28 +1,20 @@
-import fetchProducts from "@/actions/fetchProducts";
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
-import DetailCard from "@/components/DetailCard";
-import YouMayAlsoLike from "@/components/YouMayAlsoLike";
+import Detail from "@/components/Detail";
 
-const Detail = async ({ params }) => {
-   const products = await fetchProducts();
-   const product = products.find((product) => product.path == params.detail);
-
+const TypeDetailPage = async ({ params }) => {
    return (
-      <>
-         <Container>
-            <Breadcrumb
-               current={product.path.replaceAll("-", " ")}
-               links={[
-                  { name: "Categories", path: "/categories" },
-                  { name: product.category, path: `/categories/${product.category}`},
-               ]}
-            />
-            <DetailCard product={product} />
-            <YouMayAlsoLike category={params.type} />
-         </Container>
-      </>
+      <Container>
+         <Breadcrumb
+            current={params.detail.replaceAll("-", " ")}
+            links={[
+               { name: "Categories", path: "/categories" },
+               { name: params.type, path: `/categories/${params.type}` },
+            ]}
+         />
+         <Detail detail={params.detail} />
+      </Container>
    );
 };
 
-export default Detail;
+export default TypeDetailPage;

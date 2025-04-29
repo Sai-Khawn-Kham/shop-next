@@ -1,9 +1,9 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import fetchProducts from "@/actions/fetchProducts";
+import useProductStore from "@/store/useProductsStore";
 
-const YouMayAlsoLike = async ({category}) => {
-   const products = await fetchProducts();
+const YouMayAlsoLike = ({category}) => {
+   const {products} = useProductStore();
    const current = products.filter((product) => product.category==category).slice(0,4)
    return (
       <div className="my-10">

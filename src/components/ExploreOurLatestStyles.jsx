@@ -1,12 +1,13 @@
+"use client"
+
 import Link from "next/link";
 import React from "react";
 import ProductCard from "./ProductCard";
-import fetchProducts from "@/actions/fetchProducts";
+import useProductStore from "@/store/useProductsStore";
 
-const ExploreOurLatestStyles = async () => {
-   const products = await fetchProducts();
+const ExploreOurLatestStyles = () => {
+   const {products} = useProductStore();
    const current = products.slice(0,4);
-   
    return (
       <div className="my-10">
          <h2 className=" uppercase font-bold">explore our latest styles</h2>

@@ -5,7 +5,6 @@ import React from "react";
 
 const HeaderWishList = () => {
    const { wishLists } = useWishListsStore();
-
    return (
       <>
          {wishLists.length > 0 && (

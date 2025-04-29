@@ -177,5 +177,7 @@
       "sizes": ["S", "M", "L", "XL"],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at."
     }
-  ]
+  ],
+  "wishlists": [],
+  "carts": []
 }

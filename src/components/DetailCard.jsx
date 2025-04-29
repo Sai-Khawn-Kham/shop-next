@@ -8,14 +8,16 @@ import AddToCartBtn from "./AddToCartBtn";
 import toast from "react-hot-toast";
 
 const DetailCard = ({ product }) => {
-   const [quantity, setQuantity] = useState(1);
-   const [colorChoose, setColorChoose] = useState(product.colors[0]);
+   const [ quantity, setQuantity ] = useState(1);
+   const [ colorChoose, setColorChoose ] = useState(product.colors[0]);
    const [ selected, setSelected ] = useState("S")
    const { wishLists, addToWishList } = useWishListsStore();
 
    const handleDecrease = () => {
       if(quantity > 1){
          setQuantity(quantity - 1);
+      } else {
+         toast.error("Can't decrease")
       }
    };
 
@@ -42,7 +44,6 @@ const DetailCard = ({ product }) => {
          })
       }
    }
-   
    return (
       <div className="my-10 grid grid-cols-2 gap-16">
          <div>
@@ -52,10 +53,8 @@ const DetailCard = ({ product }) => {
             <div className="flex justify-baseline gap-2">
                <h3 className="capitalize font-bold text-2xl">{product.path.replaceAll("-", " ")}</h3>
                {product.status && (
-                  <div>
-                     <div className="bg-gray-950 text-gray-50 rounded w-12 h-7 flex justify-center items-center">
-                        {product.status}
-                     </div>
+                  <div className="bg-gray-950 text-gray-50 rounded w-12 h-7 flex justify-center items-center">
+                     {product.status}
                   </div>
                )}
             </div>

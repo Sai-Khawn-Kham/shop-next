@@ -1,3 +1,5 @@
+"use client"
+
 import useCartsStore from "@/store/useCartsStore";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +12,10 @@ const CartCard = ({ cart }) => {
    const handleDecrease = () => {
       if(cart.quantity>1){
          quantityDecrease(cart.id)
+         calSubTotal()
+         calShipping()
+         calTax()
+         calNetTotal()
       } else {
          Swal.fire({
             title: "Remove product from Cart?",
@@ -22,13 +28,13 @@ const CartCard = ({ cart }) => {
          }).then((result) => {
             if(result.isConfirmed){
                removeCart(cart.id)
+               calSubTotal()
+               calShipping()
+               calTax()
+               calNetTotal()
             }
          })
       }
-      calSubTotal()
-      calShipping()
-      calTax()
-      calNetTotal()
    }
 
    const handleIncrease = () => {
@@ -58,7 +64,6 @@ const CartCard = ({ cart }) => {
          }
       })
    }
-
    return (
       <div className="grid grid-cols-4 px-2 py-4 border-t border-t-gray-300">
          <div className="">
@@ -69,7 +74,7 @@ const CartCard = ({ cart }) => {
                   height={135}
                   alt={cart.path}
                   className="w-28 border border-gray-300 hover:border-gray-400 active:border-cyan-500 rounded"
-            />
+               />
             </Link>
          </div>
          <div className="flex flex-col justify-between">

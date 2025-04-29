@@ -5,7 +5,6 @@ import useCartsStore from "@/store/useCartsStore";
 
 const HeaderCart = () => {
    const { carts } = useCartsStore();
-   
    return (
       <>
          {carts.length > 0 && (

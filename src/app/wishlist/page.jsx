@@ -25,7 +25,7 @@ const Wishlist = () => {
                      </p>
                      <div>
                         <div className="hidden last:flex h-32 justify-center items-center text-gray-500 font-semibold border-t border-t-gray-300">
-                           There is no product in the Cart
+                           There is no product in the Wishlist
                         </div>
                         {wishLists && wishLists.map((wishList) => (
                            <WishListCard key={wishList.id} wishList={wishList} />

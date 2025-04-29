@@ -3,19 +3,9 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React from "react";
 
 const Contact = () => {
-   const nameRef = useRef(null);
-   const telRef = useRef(null);
-   const messageRef = useRef(null);
-
-   const handleClick = () => {
-      nameRef.current.value = "";
-      telRef.current.value = "";
-      messageRef.current.value = "";
-   };
-
    return (
       <>
          <Container>
@@ -54,31 +44,33 @@ const Contact = () => {
                         Central City, 12345
                      </p>
                   </div>
-                  <div className="flex flex-col gap-5">
+                  <form action={""} method="GET" className="flex flex-col gap-5">
                      <input
-                        ref={nameRef}
                         type="text"
+                        name="name"
                         className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded"
                         placeholder="Name"
+                        required
                      />
                      <input
-                        ref={telRef}
                         type="tel"
+                        name="tel"
                         className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded"
                         placeholder="Phone Number"
+                        required
                      />
                      <textarea
-                        ref={messageRef}
-                        className="text-sm placeholder:text-gray-500 py-1.5 px-3 py-0.5 border border-gray-300 rounded grow hsb"
+                        name="message"
+                        className="text-sm resize-none placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded grow hsb"
                         placeholder="Message"
+                        required
                      />
                      <button
-                        onClick={handleClick}
                         className="bg-gray-900 hover:bg-gray-800 active:bg-gray-600 text-gray-50 text-sm font-semibold py-1.5 rounded cursor-pointer"
                      >
                         Send Message
                      </button>
-                  </div>
+                  </form>
                </div>
             </div>
             <div className="my-10">

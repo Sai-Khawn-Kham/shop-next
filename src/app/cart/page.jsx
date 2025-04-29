@@ -4,9 +4,12 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CartCard from "@/components/CartCard";
 import Container from "@/components/Container";
 import useCartStore from "@/store/useCartStore";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const Cart = () => {
+   const router = useRouter();
    const {
       carts,
       subTotal,
@@ -25,6 +28,19 @@ const Cart = () => {
       calTax();
       calNetTotal();
    }, []);
+
+   const handleCheckoutBtn = () => {
+      if(carts.length>0){
+         router.push("/cart/checkout")
+      } else {
+         Swal.fire({
+            icon: "error",
+            title: "Empty Cart!",
+            text: "You have to add product to cart",
+            confirmButtonColor: "#444"
+         })
+      }
+   }
 
    return (
       <>
@@ -51,30 +67,32 @@ const Cart = () => {
                         ))}
                      </div>
                   </div>
-                  <div className="col-span-4 border border-gray-300 rounded p-3 flex flex-col">
-                     <div className="grow flex flex-col gap-3">
-                        <h2 className="font-bold">Order Summary</h2>
-                        <div className="flex justify-between items-center">
-                           <p>Subtotal</p>
-                           <p>{subTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                  <div className="col-span-4">
+                     <div className="border border-gray-300 rounded p-3 flex flex-col">
+                        <div className="grow flex flex-col gap-3 h-52 overflow-auto hsb">
+                           <h2 className="font-bold">Order Summary</h2>
+                           <div className="flex justify-between items-center">
+                              <p>Subtotal</p>
+                              <p>{subTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                           </div>
+                           <div className="flex justify-between items-center">
+                              <p>Shipping</p>
+                              <p>{shipping.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                           </div>
+                           <div className="flex justify-between items-center">
+                              <p>Tax</p>
+                              <p>{tax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                           </div>
                         </div>
-                        <div className="flex justify-between items-center">
-                           <p>Shipping</p>
-                           <p>{shipping.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                        <div className="flex flex-col border-t border-t-gray-300">
+                           <div className="flex justify-between my-2">
+                              <p>Total</p>
+                              <p>{netTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                           </div>
+                           <button onClick={handleCheckoutBtn} className="bg-gray-950 text-gray-50 py-1 rounded">
+                              Process to checkout
+                           </button>
                         </div>
-                        <div className="flex justify-between items-center">
-                           <p>Tax</p>
-                           <p>{tax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-                        </div>
-                     </div>
-                     <div className="flex flex-col border-t border-t-gray-300">
-                        <div className="flex justify-between my-2">
-                           <p>Total</p>
-                           <p>{netTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-                        </div>
-                        <button className="bg-gray-950 text-gray-50 py-1 rounded">
-                           Process to checkout
-                        </button>
                      </div>
                   </div>
                </div>

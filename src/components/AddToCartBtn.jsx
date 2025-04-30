@@ -35,8 +35,8 @@ const AddToCartBtn = ({ product, size = "S", color, className = "", quantity = 1
             price: product.price,
             img: product.img,
             total: product.price.discount
-               ? product.price.discount
-               : product.price.original,
+               ? product.price.discount*quantity
+               : product.price.original*quantity,
          });
       }
    };

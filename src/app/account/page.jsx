@@ -1,9 +1,19 @@
+"use client"
+
 import Breadcrumb from '@/components/Breadcrumb'
 import Container from '@/components/Container'
+import useAccountsStore from '@/store/useAccountsStore'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const AccountPage = () => {
+   const { logoutAcc } = useAccountsStore();
+   const router = useRouter();
+   const handleLogout = () => {
+      logoutAcc();
+      router.push("/")
+   }
    return (
       <Container>
          <Breadcrumb current={"My Account"} />
@@ -16,7 +26,7 @@ const AccountPage = () => {
                <Link href={"/account/orders"} className='bg-gray-500 hover:bg-gray-600 active:text-cyan-500 rounded flex justify-center items-center'>Orders</Link>
             </div>
             <div className="flex justify-end">
-               <button>Logout</button>
+               <button onClick={handleLogout} className='bg-gray-500 text-gray-50 hover:bg-gray-600 active:text-gray-500 rounded py-1 px-3'>Logout</button>
             </div>
          </div>
       </Container>

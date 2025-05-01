@@ -27,17 +27,17 @@ const Header = () => {
                <Link className="text-gray-600 hover:underline active:text-cyan-500" href={"/contact"}>CONTACT</Link>
             </div>
             <div className="flex gap-3">
-               <Link className="relative inline-block text-gray-600 hover:text-gray-950 active:text-cyan-500" href={"/wishlist"}>
+               <Link href={"/wishlist"} className="relative inline-block text-gray-600 hover:text-gray-950 active:text-cyan-500">
                   <BsHeart className="size-4.5" />
                   <HeaderWishList />
                </Link>
-               <Link className="relative inline-block text-gray-600 hover:text-gray-950 active:text-cyan-500" href={"/cart"}>
+               <Link href={"/cart"} className="relative inline-block text-gray-600 hover:text-gray-950 active:text-cyan-500">
                   <BsBag className="size-4.5" />
                   <HeaderCart />
                </Link>
-               <Link className="relative inline-block text-gray-600 hover:text-gray-950 active:text-cyan-500" href={""}>
-                  <BsPerson className="size-4.5" />
-               </Link>
+                  <Link href={"/account"} className="relative inline-block text-gray-600 hover:text-gray-950 active:text-cyan-500">
+                     <BsPerson className="size-4.5" />
+                  </Link>
             </div>
          </Container>
       </header>

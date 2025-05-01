@@ -6,7 +6,7 @@ import FaqCard from "@/components/FaqCard";
 import useFaqsStore from "@/store/useFaqsStore";
 import React from "react";
 
-const Faq = () => {
+const FaqPage = () => {
    const {faqs} = useFaqsStore();
    return (
       <Container>
@@ -26,4 +26,4 @@ const Faq = () => {
    );
 };
 
-export default Faq;
+export default FaqPage;

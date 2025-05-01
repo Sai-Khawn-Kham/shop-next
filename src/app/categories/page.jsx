@@ -6,7 +6,7 @@ import Container from "@/components/Container";
 import useCategoriesStore from "@/store/useCategoriesStore";
 import React from "react";
 
-const Categories = () => {
+const CategoriesPage = () => {
    const { categories } = useCategoriesStore();
    return (
       <Container>
@@ -24,4 +24,4 @@ const Categories = () => {
    );
 };
 
-export default Categories;
+export default CategoriesPage;

@@ -6,7 +6,7 @@ import Container from "@/components/Container";
 import ProductCard from "@/components/ProductCard";
 import useProductStore from "@/store/useProductsStore";
 
-const Products = () => {
+const ProductsPage = () => {
    const {products} = useProductStore();
    return (
       <Container>
@@ -26,4 +26,4 @@ const Products = () => {
    );
 };
 
-export default Products;
+export default ProductsPage;

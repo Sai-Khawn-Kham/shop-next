@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import Swal from "sweetalert2";
 
-const Cart = () => {
+const CartPage = () => {
    const router = useRouter();
    const { carts, subTotal, calSubTotal, shipping, calShipping, tax, calTax, netTotal, calNetTotal } = useCartsStore();
 
@@ -31,7 +31,6 @@ const Cart = () => {
          })
       }
    }
-
    return (
       <Container>
          <Breadcrumb current={"Cart"} />
@@ -90,4 +89,4 @@ const Cart = () => {
    );
 };
 
-export default Cart;
+export default CartPage;

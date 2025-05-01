@@ -4,7 +4,7 @@ import ExploreOurLatestStyles from "@/components/ExploreOurLatestStyles";
 import ShopByCategory from "@/components/ShopByCategory";
 import React from "react";
 
-const Home = () => {
+const HomePage = () => {
    return (
       <>
          <HeroSection />
@@ -16,4 +16,4 @@ const Home = () => {
    );
 };
 
-export default Home;
+export default HomePage;

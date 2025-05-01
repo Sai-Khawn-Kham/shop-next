@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
-const Checkout = () => {
+const CheckoutPage = () => {
    const [ paymentSelect, setPaymentSelect ] = useState("");
    const { carts, subTotal, shipping, tax, netTotal } = useCartsStore();
    const { payments } = usePaymentsStore();
@@ -123,4 +123,4 @@ const Checkout = () => {
    );
 };
 
-export default Checkout;
+export default CheckoutPage;

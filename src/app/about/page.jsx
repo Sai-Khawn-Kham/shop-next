@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import Image from "next/image";
 import React from "react";
 
-const About = () => {
+const AboutPage = () => {
    return (
       <Container>
          <Breadcrumb current={"About"} />
@@ -25,4 +25,4 @@ const About = () => {
    );
 };
 
-export default About;
+export default AboutPage;

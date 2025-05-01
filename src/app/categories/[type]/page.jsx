@@ -1,9 +1,9 @@
 import Type from "@/components/Type";
 
-const TypePage = ({ params }) => {
+const CategoriesTypePage = ({ params }) => {
    return (
       <Type type={params.type} />
    );
 };
 
-export default TypePage;
+export default CategoriesTypePage;

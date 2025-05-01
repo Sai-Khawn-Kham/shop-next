@@ -6,7 +6,7 @@ import WishListCard from "@/components/WishListCard";
 import useWishListsStore from "@/store/useWishListsStore";
 import React from "react";
 
-const Wishlist = () => {
+const WishlistPage = () => {
    const { wishLists } = useWishListsStore();
    return (
       <Container>
@@ -34,4 +34,4 @@ const Wishlist = () => {
    );
 };
 
-export default Wishlist;
+export default WishlistPage;

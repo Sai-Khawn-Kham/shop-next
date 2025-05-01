@@ -5,7 +5,7 @@ import Container from "@/components/Container";
 import Image from "next/image";
 import React from "react";
 
-const Contact = () => {
+const ContactPage = () => {
    const handleClick = () => {
       document.querySelector("#name").value = "";
       document.querySelector("#tel").value = "";
@@ -55,4 +55,4 @@ const Contact = () => {
    );
 };
 
-export default Contact;
+export default ContactPage;

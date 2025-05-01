@@ -14,7 +14,7 @@ const OrderCard = ({ cart }) => {
    }, [])
    
    return (
-      <div className="grid grid-cols-4 py-4 border-b border-gray-300">
+      <div className="grid grid-cols-4 gap-3 py-4 border-b border-gray-300">
          <div className="">
             <Link href={`/products/${cart.path}`} className="inline-block">
                <Image
@@ -26,7 +26,7 @@ const OrderCard = ({ cart }) => {
                />
             </Link>
          </div>
-         <div className="flex flex-col gap-3">
+         <div className="col-span-2 flex flex-col gap-2">
             <h3 className="font-bold capitalize">{cart.path.replaceAll("-"," ")}</h3>
 
             <div className="text-gray-500 flex gap-2">
@@ -44,10 +44,6 @@ const OrderCard = ({ cart }) => {
                <span>{cart.quantity}</span>
             </div>
          </div>
-
-         <div className="">
-         </div>
-
          <div>
             <p className="text-end font-medium">
                {cart.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}

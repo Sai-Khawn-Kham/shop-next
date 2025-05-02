@@ -16,8 +16,8 @@ const WishlistPage = () => {
             <p className="text-gray-500 mb-5">
                Your saved favorites are here, waiting for their moment.
             </p>
-            <div className="grid grid-cols-12 gap-5">
-               <div className="col-span-8 border border-gray-300 rounded px-2">
+            <div className="grid md:grid-cols-12 gap-5">
+               <div className="md:col-span-8 border border-gray-300 rounded px-2">
                   <p className="text-sm font-semibold text-gray-500 p-2">PRODUCT</p>
                   <div>
                      <div className="hidden last:flex h-32 justify-center items-center text-gray-500 font-semibold border-t border-t-gray-300">

@@ -13,8 +13,8 @@ const CategoriesPage = () => {
          <Breadcrumb current={"Categories"} />
          <div className="my-10">
             <h2 className="font-bold text-2xl">All Categories</h2>
-            <p className="mb-5">Relaxed fits for everyday wear.</p>
-            <div className="grid grid-cols-4 gap-5">
+            <p className="text-gray-500 mb-5">Relaxed fits for everyday wear.</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
                {categories.map((category) => (
                   <CategoryCard key={category.id} category={category} />
                ))}

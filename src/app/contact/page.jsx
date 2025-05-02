@@ -22,7 +22,7 @@ const ContactPage = () => {
             <p className="text-gray-500 mb-5">
                Have a question or need help? We’re here for you!
             </p>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-5">
                <div className="border border-gray-400 rounded p-5">
                   <h3 className="font-semibold">Chat with us</h3>
                   <p className="text-gray-500">Connect with us for personalized support.</p>
@@ -38,7 +38,7 @@ const ContactPage = () => {
                   <p className="text-gray-500">We're Waiting to Welcome You!</p>
                   <p className="text-cyan-500 hover:underline cursor-pointer">789 Prestige Towers, Suite 405, Downtown District, Central City, 12345</p>
                </div>
-               <div className="flex flex-col gap-5">
+               <div className="flex flex-col gap-5 border border-gray-300 p-3">
                   <input type="text" name="name" id="name" className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Name" required />
                   <input type="email" name="email" id="email" className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Email" required />
                   <textarea name="message" id="message" className="text-sm resize-none placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded grow hsb" placeholder="Message" required />

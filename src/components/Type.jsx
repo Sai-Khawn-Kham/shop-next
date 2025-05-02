@@ -14,7 +14,7 @@ const Type = ({type}) => {
          <Breadcrumb current={type} links={[{ name: "Categories", path: "/categories" }]} />
          <div className="my-10">
             <h2 className="text-2xl font-bold mb-5 capitalize">{type}</h2>
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
                {current.map((product) => (
                   <ProductCard
                      key={product.id}

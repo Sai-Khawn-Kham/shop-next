@@ -52,8 +52,8 @@ const CartPage = () => {
             <p className="text-gray-500 mb-5">
                Double-check your favorites and get ready to shine!
             </p>
-            <div className="grid grid-cols-12 gap-5">
-               <div className="col-span-8 border border-gray-300 rounded px-2">
+            <div className="grid md:grid-cols-12 gap-5">
+               <div className="md:col-span-8 border border-gray-300 rounded px-2">
                   <div className="grid grid-cols-4 text-sm font-semibold text-gray-500 p-2">
                      <p className="col-span-2">PRODUCT</p>
                      <p className="text-end">PRICE</p>
@@ -68,7 +68,7 @@ const CartPage = () => {
                      ))}
                   </div>
                </div>
-               <div className="col-span-4">
+               <div className="md:col-span-4">
                   <div className="border border-gray-300 rounded p-3 flex flex-col">
                      <div className="grow flex flex-col gap-3 h-52 overflow-auto hsb">
                         <h2 className="font-bold">Order Summary</h2>

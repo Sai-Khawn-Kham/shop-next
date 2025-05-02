@@ -10,8 +10,8 @@ const OrderDate = ({ date }) => {
       hour12: true,
    }).format(date);
    return (
-      <td className="py-1 text-base/tight flex flex-col justify-center items-center">
-         <span>{formattedDate.split(",")[0]}</span>
+      <td className="py-1 px-2 text-base/tight flex flex-col justify-center items-center">
+         <span className="text-nowrap">{formattedDate.split(",")[0]}</span>
          <span>{formattedDate.split(",")[1]}</span>
       </td>
    );

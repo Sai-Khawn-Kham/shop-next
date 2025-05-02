@@ -46,8 +46,8 @@ const RegisterPage = () => {
    }
 
    return (
-      <div className="flex justify-center items-center w-screen h-screen bg-gray-200 absolute top-0 z-100">
-         <div className="w-2/5 bg-gray-50 p-5 rounded-lg">
+      <div className="flex justify-center items-center w-screen h-screen bg-gray-200 absolute top-0 z-100 p-3">
+         <div className="w-full md:w-2/5 bg-gray-50 p-3 md:p-5 rounded-lg">
             <h1 className="text-3xl font-bold font-serif text-center">Register</h1>
             <div className="flex flex-col gap-3">
                <div className="flex flex-col gap-1">

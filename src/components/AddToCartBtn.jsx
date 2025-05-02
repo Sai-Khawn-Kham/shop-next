@@ -4,6 +4,7 @@ import React from "react";
 import useCartsStore from "@/store/useCartsStore";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { BsCart, BsCartCheck } from "react-icons/bs";
 
 const AddToCartBtn = ({ product, size = "S", color, className = "", quantity = 1, }) => {
    const { carts, addCart, quantityIncrease } = useCartsStore();
@@ -50,7 +51,7 @@ const AddToCartBtn = ({ product, size = "S", color, className = "", quantity = 1
                : "bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-900"
          } duration-300 py-1 px-2 flex items-center justify-center gap-2 disabled:opacity-80 cursor-pointer`}
       >
-         {addedItem ? "Added to Cart" : "Add to Cart"}
+         {addedItem ? (<><BsCartCheck /> Added</>) : <><BsCart /> Add</>}
       </button>
    );
 };

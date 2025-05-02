@@ -45,11 +45,11 @@ const DetailCard = ({ product }) => {
       }
    }
    return (
-      <div className="my-10 grid grid-cols-2 gap-16">
+      <div className="my-10 grid md:grid-cols-2 gap-5 md:gap-10">
          <div>
             <Image src={product.img} width={395} height={477} alt={product.path} />
          </div>
-         <div className="flex flex-col justify-between">
+         <div className="flex flex-col justify-between gap-2">
             <div className="flex justify-baseline gap-2">
                <h3 className="capitalize font-bold text-2xl">{product.path.replaceAll("-", " ")}</h3>
                {product.status && (
@@ -104,7 +104,7 @@ const DetailCard = ({ product }) => {
                   <div onClick={handleIncrease} className="border border-gray-400 rounded px-2 cursor-pointer">+</div>
                </div>
             </div>
-            <p>{product.description}</p>
+            <p className="text-gray-500">{product.description}</p>
             <div>
                <span onClick={handleAddToWishList} className="cursor-pointer">
                   {wishLists.find((wishList) => wishList.path == product.path) ? (

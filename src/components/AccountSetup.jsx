@@ -35,13 +35,16 @@ const AccountSetup = ({ setup }) => {
    }, [])
 
    const handlePersonal = () => {
-      setState("personal")
+      // setState("personal")
+      router.push("/account/personal")
    }
    const handleSecurity = () => {
-      setState("security")
+      // setState("security")
+      router.push("/account/security")
    }
    const handleOrders = () => {
-      setState("orders")
+      // setState("orders")
+      router.push("/account/orders")
    }
 
    const handlePhone = (e) => {
@@ -94,11 +97,11 @@ const AccountSetup = ({ setup }) => {
          <div className="my-10">
             <h2 className='uppercase font-bold text-2xl'>my account</h2>
             <p className='text-gray-500'>Manage your personal details</p>
-            <div className="grid grid-cols-3 gap-5 my-5">
-               <div className="h-80 flex flex-col gap-1 border border-gray-300 rounded p-3">
-                  <div className='grow'>
+            <div className="flex flex-col md:flex-row gap-5 my-5">
+               <div className="md:min-h-79 flex md:flex-col gap-1 border border-gray-300 rounded p-1">
+                  <div className='grow flex md:block overflow-auto hsb'>
                      <p onClick={handlePersonal} className='flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
-                        <BsPerson /><span className='capitalize'>personal information</span>
+                        <BsPerson /><span className='capitalize'>personal</span>
                      </p>
                      <p onClick={handleSecurity} className='flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
                         <BsLock /><span className="capitalize">security</span>
@@ -108,14 +111,14 @@ const AccountSetup = ({ setup }) => {
                         <span className="capitalize">orders</span>
                      </p>
                   </div>
-                  <div className='border-t border-gray-300'>
+                  <div className='md:border-t border-gray-300 md:pt-2'>
                      <p onClick={handleLogout} className='flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
                         <HiOutlineLogout />
                         <span className="capitalize">logout</span>
                      </p>
                   </div>
                </div>
-               <div className="col-span-2">
+               <div className="grow">
                   {state == "personal" && (
                      <div className="flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-5">
                         <div className="flex flex-col gap-1">
@@ -175,7 +178,7 @@ const AccountSetup = ({ setup }) => {
                      </div>
                   )}
                   {state == "orders" && (
-                     <div className="flex flex-col border border-gray-300 rounded">
+                     <div className="flex flex-col border border-gray-300 rounded overflow-auto hsb">
                         <table>
                            <thead>
                               <tr className='border-b border-gray-300'>

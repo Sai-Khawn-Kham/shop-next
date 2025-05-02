@@ -58,9 +58,11 @@ const ProductCard = ({ product, detail }) => {
          </div>
          <div className="px-2">
             <div className="relative inline-block">
-               <h3 className={`inline-block relative font-semibold capitalize`}>{product.path.replaceAll("-", " ")}</h3>
+               <h3 className={`relative font-semibold capitalize line-clamp-1`}>
+                  {product.path.replaceAll("-", " ")}
+               </h3>
                {product.status && (
-                  <span className="text-[5px] px-0.5 py-0.5 absolute -top-1 -right-2.5 bg-red-400 text-gray-50 rounded-full">
+                  <span className="text-[5px] px-0.5 py-0.5 absolute -top-1.5 -right-1 bg-red-400 text-gray-50 rounded-full">
                      {product.status}
                   </span>
                )}

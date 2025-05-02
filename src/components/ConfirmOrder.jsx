@@ -38,8 +38,8 @@ const OrderConfirmation = ({ params }) => {
                current={"Order Confirmation"}
             />
          </Container>
-         <div className="mt-10 flex justify-center items-center">
-            <div className="flex flex-col w-2/5 min-h-[410px] border border-gray-400 rounded p-3">
+         <div className="mt-10 flex justify-center items-center p-3">
+            <div className="flex flex-col md:w-2/5 min-h-[410px] border border-gray-400 rounded p-3">
                <div className="flex justify-between items-center mb-1">
                   <h3 className="text-2xl font-bold uppercase">order id#{order.orderId}</h3>
                   <div className="bg-orange-200 text-orange-800 rounded-lg flex justify-center items-center py-0.5 px-1.5">Pending</div>

@@ -30,8 +30,8 @@ const LoginPage = () => {
    }
 
    return (
-      <div className="flex justify-center items-center w-screen h-screen bg-gray-200 absolute top-0 z-100">
-         <div className="w-2/5 bg-gray-50 p-5 rounded-lg">
+      <div className="flex justify-center items-center w-screen h-screen bg-gray-200 absolute top-0 z-100 p-3">
+         <div className="w-full md:w-2/5 bg-gray-50 p-3 md:p-5 rounded-lg">
             <h1 className="text-3xl font-bold font-serif text-center">Login</h1>
             <div className="flex flex-col gap-3">
                <div className="flex flex-col gap-1">
@@ -44,7 +44,7 @@ const LoginPage = () => {
                </div>
                <div className="flex justify-between items-center">
                   <Link href={"/register"} className="text-cyan-700 active:text-cyan-500 underline">don't have account, register</Link>
-                  <button onClick={handleLogin} className="bg-gray-500 text-gray-50 py-1 px-5 rounded-lg cursor-pointer">Register</button>
+                  <button onClick={handleLogin} className="bg-gray-500 text-gray-50 py-1 px-5 rounded-lg cursor-pointer">Login</button>
                </div>
             </div>
          </div>

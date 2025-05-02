@@ -10,12 +10,12 @@ const ShopByCategory = () => {
    const current = categories.slice(0,4);
    return (
       <div className="my-10">
-         <h2 className="uppercase font-bold">shop by category</h2>
+         <h2 className="uppercase font-bold text-xl">shop by category</h2>
          <p className="text-gray-500 mb-3">
             Explore our collections and find the perfect pieces for every
             moment.
          </p>
-         <div className="grid grid-cols-4 gap-5 mb-5">
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-3 md:mb-5">
             {current.map((category) => (
                <CategoryCard key={category.id} category={category} />
             ))}
@@ -24,7 +24,7 @@ const ShopByCategory = () => {
             <p className="text-gray-500">
                Explore Our Collection – Find Exactly What You’re Looking For
             </p>
-            <Link href={"/categories"} className="underline hover:text-gray-700 active:text-cyan-500">
+            <Link href={"/categories"} className="underline text-gray-700 hover:text-gray-700 active:text-cyan-500">
                View all categories
             </Link>
          </div>

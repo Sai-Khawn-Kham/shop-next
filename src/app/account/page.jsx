@@ -3,12 +3,17 @@
 import Breadcrumb from '@/components/Breadcrumb'
 import Container from '@/components/Container'
 import useAccountsStore from '@/store/useAccountsStore'
+import useCartsStore from '@/store/useCartsStore'
+import useWishListsStore from '@/store/useWishListsStore'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 
 const AccountPage = () => {
    const { users, logoutAcc } = useAccountsStore();
+   const user = users[0];
+   const { wishLists, emptyWishlists } = useWishListsStore();
+   const { carts, emptyCarts } = useCartsStore();
    const router = useRouter();
 
    useEffect(() => {
@@ -19,6 +24,8 @@ const AccountPage = () => {
    
    const handleLogout = () => {
       logoutAcc();
+      emptyWishlists();
+      emptyCarts();
       router.push("/")
    }
    return (

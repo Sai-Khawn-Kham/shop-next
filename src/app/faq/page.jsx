@@ -19,7 +19,7 @@ const FaqPage = () => {
                </p>
             </div>
          </div>
-         <div className="my-10">
+         <div className="my-10 grid grid-cols-2 gap-5">
             {faqs.map((faq) => <FaqCard key={faq.id} faq={faq} />)}
          </div>
       </Container>

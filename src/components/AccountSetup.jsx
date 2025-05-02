@@ -4,21 +4,35 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Container from '@/components/Container'
 import useAccountsStore from '@/store/useAccountsStore'
 import useOrdersStore from '@/store/useOrdersStore'
-import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
-import { BsBag, BsLock, BsPerson, BsUnlock } from 'react-icons/bs'
+import { BsArrowRight, BsBag, BsLock, BsPerson, BsUnlock } from 'react-icons/bs'
 import { HiOutlineLogout } from 'react-icons/hi'
+import OrderDate from './OrderDate'
+import Link from 'next/link'
+import useWishListsStore from '@/store/useWishListsStore'
+import useCartsStore from '@/store/useCartsStore'
 
 const AccountSetup = ({ setup }) => {
-   const { users, changePassword, changeAddress, changePhone } = useAccountsStore();
+   const { users, changePassword, changeAddress, changePhone, logoutAcc } = useAccountsStore();
    const user = users[0];
    const { orders } = useOrdersStore();
+   const { wishLists, emptyWishlists } = useWishListsStore();
+   const { carts, emptyCarts } = useCartsStore();
    const [ state, setState ] = useState(setup);
    const [ oldPassword, setOldPassword ] = useState("")
    const [ newPassword, setNewPassword ] = useState("")
    const [ confirmNewPassword, setConfirmNewPassword ] = useState("")
    const [ phone, setPhone ] = useState(user&&user.phone?user.phone:0)
    const [ address, setAddress ] = useState("")
+   const router = useRouter();
+
+   useEffect(() => {
+      if(users.length==0){
+         router.push("/")
+      }
+   }, [])
 
    const handlePersonal = () => {
       setState("personal")
@@ -67,6 +81,13 @@ const AccountSetup = ({ setup }) => {
          toast.error("wrong password")
       }
    }
+
+   const handleLogout = () => {
+      logoutAcc();
+      emptyWishlists();
+      emptyCarts();
+      router.push("/")
+   }
    return (
       <Container>
          <Breadcrumb links={[{name: "My Account", path: "/account"}]} current={setup} />
@@ -88,7 +109,7 @@ const AccountSetup = ({ setup }) => {
                      </p>
                   </div>
                   <div className='border-t border-gray-300'>
-                     <p className='flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
+                     <p onClick={handleLogout} className='flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
                         <HiOutlineLogout />
                         <span className="capitalize">logout</span>
                      </p>
@@ -154,10 +175,29 @@ const AccountSetup = ({ setup }) => {
                      </div>
                   )}
                   {state == "orders" && (
-                     <div className="flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-5">
-                        {orders.map((order) => (
-                           <div>order</div>
-                        ))}
+                     <div className="flex flex-col border border-gray-300 rounded">
+                        <table>
+                           <thead>
+                              <tr className='border-b border-gray-300'>
+                                 <th className='py-3 px-2 text-start'>Order ID</th>
+                                 <th className='py-3 px-2 text-start'>Customer Name</th>
+                                 <th className='py-3 px-2 text-start'>Customer Email</th>
+                                 <th className='py-3 px-2 '>Date</th>
+                                 <th className='py-3 px-2 '>Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              {orders.map((el) => (
+                                 <tr key={el.id} className='text-gray-600 border-b last:border-none odd:bg-gray-100 even:bg-gray-50 border-gray-300'>
+                                    <td className='py-1 px-2'>{el.orderId}</td>
+                                    <td className='py-1 px-2'>{el.customer.name}</td>
+                                    <td className='py-1 px-2'>{el.customer.email}</td>
+                                    <OrderDate date={el.date} />
+                                    <td><Link href={`/cart/checkout/confirm-order-${el.id}`} className='flex justify-center items-center'><BsArrowRight /></Link></td>
+                                 </tr>
+                              ))}
+                           </tbody>
+                        </table>
                      </div>
                   )}
                </div>

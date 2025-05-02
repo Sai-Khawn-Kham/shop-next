@@ -43,7 +43,7 @@ const LoginPage = () => {
                   <input type="text" value={password} onChange={handlePassword} name="password" id="password" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
                </div>
                <div className="flex justify-between items-center">
-                  <Link href={"/login"} className="text-cyan-700 underline">don't have account, register</Link>
+                  <Link href={"/register"} className="text-cyan-700 active:text-cyan-500 underline">don't have account, register</Link>
                   <button onClick={handleLogin} className="bg-gray-500 text-gray-50 py-1 px-5 rounded-lg cursor-pointer">Register</button>
                </div>
             </div>

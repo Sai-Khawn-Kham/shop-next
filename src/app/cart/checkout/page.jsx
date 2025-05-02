@@ -57,7 +57,8 @@ const CheckoutPage = () => {
       const phoneCon = phone.replace(/[^0-9]/g,'').length==phone.length && phone.replace(/[^0-9]/g,'').length==11 && phone.replace(/[^0-9]/g,'');  // true
       const paymentCon = paymentSelect=="";  // false for right input
       const cartsCon = carts.length==0;  // false for right input
-
+      const date = new Date();
+      
       if(!addressCon) {
          if(!nameCon) {
             if(emailCon) {
@@ -79,7 +80,8 @@ const CheckoutPage = () => {
                               address,
                               payment: paymentSelect,
                               additional,
-                           }
+                           },
+                           date,
                         })
                         emptyCarts();
                         calSubTotal();

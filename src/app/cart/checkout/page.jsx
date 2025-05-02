@@ -2,36 +2,108 @@
 
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
+import useAccountsStore from "@/store/useAccountsStore";
 import useCartsStore from "@/store/useCartsStore";
+import useOrdersStore from "@/store/useOrdersStore";
 import usePaymentsStore from "@/store/usePaymentsStore";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const CheckoutPage = () => {
-   const [ paymentSelect, setPaymentSelect ] = useState("");
-   const { carts, subTotal, shipping, tax, netTotal } = useCartsStore();
-   const { payments } = usePaymentsStore();
    const router = useRouter();
+   const { users } = useAccountsStore();
+   const user = users[0]
+   const { carts, subTotal, shipping, tax, netTotal, calSubTotal, calShipping, calTax, calNetTotal, emptyCarts } = useCartsStore();
+   const { orders, addOrder } = useOrdersStore();
+   const { payments } = usePaymentsStore();
+   const [ address, setAddress ] = useState(user&&user.address?user.address:"")
+   const [ name, setName ] = useState(user?user.name:"")
+   const [ email, setEmail ] = useState(user?user.email:"")
+   const [ phone, setPhone ] = useState(user&&user.phone?user.phone:"")
+   const [ paymentSelect, setPaymentSelect ] = useState("");
+   const [ additional, setAdditional ] = useState("")
+
+   useEffect(() => {
+      if(users.length==0 || carts.length==0) {
+         router.push("/")
+      }
+      calSubTotal();
+      calShipping();
+      calTax();
+      calNetTotal();
+   }, [])
+   
+   const handleAddress = (e) => {
+      setAddress(e.target.value)
+   }
+   const handleName = (e) => {
+      setName(e.target.value)
+   }
+   const handleEmail = (e) => {
+      setEmail(e.target.value)
+   }
+   const handlePhone = (e) => {
+      setPhone(e.target.value)
+   }
+   const handleAdditional = (e) => {
+      setAdditional(e.target.value)
+   }
 
    const handlePlaceOrder = () => {
-      const address = document.querySelector("#address")
-      const addressCon = address.value.replaceAll(" ","")==""; // false
-      const name = document.querySelector("#name")
-      const nameCon = name.value.replaceAll(" ","")==""; // false
-      const email = document.querySelector("#email")
-      const emailCon = email.value.split("@")[1]!="gmail.com";   // false
-      const phone = document.querySelector("#phone")
-      const phoneCon = isNaN(phone.valueAsNumber);  // false
-      const paymentCon = paymentSelect=="";  // false
-      const cartsCon = carts.length==0;  // false
-      const additional = document.querySelector("#additional")
+      const addressCon = address.replaceAll(" ","")==""; // false for right input
+      const nameCon = name.replaceAll(" ","")==""; // false for right input
+      const emailCon = email.split("@")[1]=="gmail.com";   // true for right input
+      const phoneCon = phone.replace(/[^0-9]/g,'').length==phone.length && phone.replace(/[^0-9]/g,'').length==11 && phone.replace(/[^0-9]/g,'');  // true
+      const paymentCon = paymentSelect=="";  // false for right input
+      const cartsCon = carts.length==0;  // false for right input
 
-      const overallCon = !addressCon && !nameCon && !emailCon && !phoneCon && !paymentCon && !cartsCon;
-      if(overallCon){
-         router.push("/cart/checkout/order-confirm")
+      if(!addressCon) {
+         if(!nameCon) {
+            if(emailCon) {
+               if(phoneCon) {
+                  if(!paymentCon) {
+                     if(!cartsCon) {
+                        addOrder({
+                           id: orders.length+1,
+                           orderId: (orders.length+1).toString().padStart(5,"0"),
+                           carts: carts,
+                           subTotal: subTotal,
+                           shipping: shipping,
+                           tax: tax,
+                           netTotal: netTotal,
+                           customer: {
+                              name,
+                              email,
+                              phone,
+                              address,
+                              payment: paymentSelect,
+                              additional,
+                           }
+                        })
+                        emptyCarts();
+                        calSubTotal();
+                        calShipping();
+                        calTax();
+                        calNetTotal();
+                        router.push(`/cart/checkout/confirm-order-${orders.length+1}`)
+                     } else {
+                        toast.error("Add product to cart first")
+                     }
+                  } else {
+                     toast.error("Choose payment method")
+                  }
+               } else {
+                  toast.error("Wrong phone number")
+               }
+            } else {
+               toast.error("Wrong email")
+            }
+         } else {
+            toast.error("Fill your name")
+         }
       } else {
-         toast.error("fill all input")
+         toast.error("Fill your address")
       }
    }
    return (
@@ -48,7 +120,7 @@ const CheckoutPage = () => {
                      <label htmlFor="address" className="font-bold text-base/1">
                         Shipping address
                      </label>
-                     <input type="text" name="address" id="address" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="123 Main St, Apt 4B, San Francisco, CA 94107, USA" required />
+                     <input type="text" value={address} onChange={handleAddress} name="address" id="address" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="123 Main St, Apt 4B, San Francisco, CA 94107, USA" required />
                   </div>
                   <div className="border-b border-gray-300 py-5">
                      <h3 className="font-bold text-base/1 mb-3">
@@ -57,15 +129,15 @@ const CheckoutPage = () => {
                      <div className="grid grid-cols-2 gap-x-5 gap-y-2">
                         <div className="flex flex-col gap-1">
                            <label htmlFor="name">Name</label>
-                           <input type="text" name="name" id="name" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="Kyaw Kyaw" required />
+                           <input type="text" value={name} onChange={handleName} name="name" id="name" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="Kyaw Kyaw" required />
                         </div>
                         <div className="flex flex-col gap-1">
                            <label htmlFor="email">Email</label>
-                           <input type="email" name="email" id="email" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="example@gmail.com" required />
+                           <input type="email" value={email} onChange={handleEmail} name="email" id="email" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="example@gmail.com" required />
                         </div>
                         <div className="col-span-2 flex flex-col gap-1">
                            <label htmlFor="phone">Phone Number</label>
-                           <input type="number" name="phone" id="phone" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="+95 9 678 123456" required />
+                           <input type="text" value={phone} onChange={handlePhone} name="phone" id="phone" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder="+95 9 678 123456" required />
                         </div>
                      </div>
                   </div>
@@ -86,7 +158,7 @@ const CheckoutPage = () => {
                      <h3 className="font-bold text-base/1 mb-3">
                         Additional Details
                      </h3>
-                     <textarea name="additional" id="additional" className="w-full h-30 resize-none border border-gray-300 rounded p-3 focus:outline-none" required></textarea>
+                     <textarea value={additional} onChange={handleAdditional} name="additional" id="additional" className="w-full h-30 resize-none border border-gray-300 rounded p-3 focus:outline-none" required></textarea>
                   </div>
                </div>
                <div className="col-span-4">
@@ -111,7 +183,7 @@ const CheckoutPage = () => {
                            <p>Total</p>
                            <p>{netTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                         </div>
-                        <button onClick={handlePlaceOrder} className="bg-gray-950 text-gray-50 py-1 rounded">
+                        <button onClick={handlePlaceOrder} className="bg-gray-950 text-gray-50 py-1 rounded cursor-pointer">
                            Place Order
                         </button>
                      </div>

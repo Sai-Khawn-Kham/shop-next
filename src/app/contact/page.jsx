@@ -3,13 +3,16 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import toast from "react-hot-toast";
 
 const ContactPage = () => {
    const handleClick = () => {
       document.querySelector("#name").value = "";
-      document.querySelector("#tel").value = "";
+      document.querySelector("#email").value = "";
       document.querySelector("#message").value = "";
+      toast.success("Message sent")
    }
    return (
       <Container>
@@ -23,7 +26,7 @@ const ContactPage = () => {
                <div className="border border-gray-400 rounded p-5">
                   <h3 className="font-semibold">Chat with us</h3>
                   <p className="text-gray-500">Connect with us for personalized support.</p>
-                  <p className="text-cyan-500 hover:underline cursor-pointer">support@trendflow.com</p>
+                  <Link href={"/"} className="text-cyan-500 hover:underline cursor-pointer">support@trendflow.com</Link>
                   <hr className="border-t-gray-500 mt-3 mb-5" />
 
                   <h3 className="font-semibold">Call us</h3>
@@ -37,7 +40,7 @@ const ContactPage = () => {
                </div>
                <div className="flex flex-col gap-5">
                   <input type="text" name="name" id="name" className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Name" required />
-                  <input type="tel" name="message" id="tel" className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Phone Number" required />
+                  <input type="email" name="email" id="email" className="text-sm placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded" placeholder="Email" required />
                   <textarea name="message" id="message" className="text-sm resize-none placeholder:text-gray-500 py-1.5 px-3 border border-gray-300 rounded grow hsb" placeholder="Message" required />
                   <button
                      onClick={handleClick}

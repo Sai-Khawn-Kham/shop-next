@@ -25,6 +25,7 @@ const Header = () => {
             </Link>
             <div className="flex gap-3">
                <Link className="text-gray-600 hover:underline active:text-cyan-500" href={"/"}>HOME</Link>
+               <Link className="text-gray-600 hover:underline active:text-cyan-500" href={"/categories"}>CATEGORIES</Link>
                <Link className="text-gray-600 hover:underline active:text-cyan-500" href={"/products"}>PRODUCTS</Link>
                <Link className="text-gray-600 hover:underline active:text-cyan-500" href={"/about"}>ABOUT</Link>
                <Link className="text-gray-600 hover:underline active:text-cyan-500" href={"/faq"}>FAQ</Link>

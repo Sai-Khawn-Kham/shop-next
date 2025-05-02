@@ -68,7 +68,7 @@ const RegisterPage = () => {
                </div>
                <div className="flex justify-between items-center">
                   <Link href={"/login"} className="text-cyan-700 underline">already have account, login</Link>
-                  <button onClick={handleRegister} className="bg-gray-500 text-gray-50 py-1 px-5 rounded-lg">Register</button>
+                  <button onClick={handleRegister} className="bg-gray-500 text-gray-50 py-1 px-5 rounded-lg cursor-pointer">Register</button>
                </div>
             </div>
          </div>

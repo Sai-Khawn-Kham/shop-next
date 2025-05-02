@@ -3,18 +3,22 @@
 import Breadcrumb from '@/components/Breadcrumb'
 import Container from '@/components/Container'
 import useAccountsStore from '@/store/useAccountsStore'
+import useOrdersStore from '@/store/useOrdersStore'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 import { BsBag, BsLock, BsPerson, BsUnlock } from 'react-icons/bs'
 import { HiOutlineLogout } from 'react-icons/hi'
 
 const AccountSetup = ({ setup }) => {
+   const { users, changePassword, changeAddress, changePhone } = useAccountsStore();
+   const user = users[0];
+   const { orders } = useOrdersStore();
    const [ state, setState ] = useState(setup);
    const [ oldPassword, setOldPassword ] = useState("")
    const [ newPassword, setNewPassword ] = useState("")
    const [ confirmNewPassword, setConfirmNewPassword ] = useState("")
-   const { users, changePassword } = useAccountsStore();
-   const user = users[0];
+   const [ phone, setPhone ] = useState(user&&user.phone?user.phone:0)
+   const [ address, setAddress ] = useState("")
 
    const handlePersonal = () => {
       setState("personal")
@@ -26,6 +30,12 @@ const AccountSetup = ({ setup }) => {
       setState("orders")
    }
 
+   const handlePhone = (e) => {
+      setPhone(e.target.value)
+   }
+   const handleAddress = (e) => {
+      setAddress(e.target.value)
+   }
    const handleOldPassword = (e) => {
       setOldPassword(e.target.value);
    }
@@ -34,6 +44,20 @@ const AccountSetup = ({ setup }) => {
    }
    const handleConfirmNewPassword = (e) => {
       setConfirmNewPassword(e.target.value);      
+   }
+
+   const handleChangePhone = (e) => {
+      if(e.key=="Enter"){
+         changePhone(user.email, phone)
+         toast.success("change phone number successful")
+      }
+   }
+
+   const handleChangeAddress = (e) => {
+      if(e.key=="Enter") {
+         changeAddress(user.email,address);
+         toast.success("change address successful")
+      }
    }
 
    const handleChangePassword = () => {
@@ -75,21 +99,36 @@ const AccountSetup = ({ setup }) => {
                      <div className="flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-5">
                         <div className="flex flex-col gap-1">
                            <label htmlFor="name">Name</label>
-                           <div className='border border-gray-300 rounded py-1 px-2'>{user.name}</div>
-                           {/* <input type="text" name="name" id="name" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required /> */}
+                           {user && user.name ? (
+                              <div className='border border-gray-300 rounded py-1 px-2'>{user.name}</div>
+                           ) : (
+                              <input type="text" name="name" id="name" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
+                           )}
                         </div>
                         <div className="flex flex-col gap-1">
                            <label htmlFor="email">Email</label>
-                           <div className='border border-gray-300 rounded py-1 px-2'>{user.email}</div>
-                           {/* <input type="email" name="email" id="email" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required /> */}
+                           { user && user.email ? (
+                              <div className='border border-gray-300 rounded py-1 px-2'>{user.email}</div>
+                           ) : (
+                              <input type="email" name="email" id="email" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
+                           )}
                         </div>
-                        {user.address && (
-                           <div className="flex flex-col gap-1">
-                              <label htmlFor="address">Address</label>
+                        <div className="flex flex-col gap-1">
+                           <label htmlFor='phone'>Phone</label>
+                           {user && user.phone ? (
+                              <div className='border border-gray-300 rounded py-1 px-2'>{user.phone}</div>
+                           ) : (
+                              <input type="text" value={phone} onChange={handlePhone} onKeyUp={handleChangePhone} name="address" id="address" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
+                           )}
+                        </div>
+                        <div className="flex flex-col gap-1">
+                           <label htmlFor='address'>Address</label>
+                           {user && user.address ? (
                               <div className='border border-gray-300 rounded py-1 px-2'>{user.address}</div>
-                              {/* <input type="text" name="address" id="address" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required /> */}
-                           </div>
-                        )}
+                           ) : (
+                              <input type="text" value={address} onChange={handleAddress} onKeyUp={handleChangeAddress} name="address" id="address" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
+                           )}
+                        </div>
                      </div>
                   )}
                   {state == "security" && (
@@ -106,15 +145,19 @@ const AccountSetup = ({ setup }) => {
                            <label htmlFor="confirmNewPassword">Confirm New Password</label>
                            <input type="text" value={confirmNewPassword} onChange={handleConfirmNewPassword} name="confirmNewPassword" id="confirmNewPassword" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder='Confirm New Password' required />
                         </div>
-                        <button onClick={handleChangePassword} className="flex items-center justify-center gap-2 text-nowrap rounded bg-gray-500 px-3 py-1 font-medium text-white hover:bg-gray-600 focus:outline-none">
-                           <BsUnlock />
-                           Change Password
-                        </button>
+                        <div className='flex justify-end'>
+                           <button onClick={handleChangePassword} className="flex items-center justify-center gap-2 rounded bg-gray-500 px-3 py-1 font-medium text-white hover:bg-gray-600 focus:outline-none">
+                              <BsUnlock />
+                              Change Password
+                           </button>
+                        </div>
                      </div>
                   )}
                   {state == "orders" && (
                      <div className="flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-5">
-                        orders
+                        {orders.map((order) => (
+                           <div>order</div>
+                        ))}
                      </div>
                   )}
                </div>

@@ -5,11 +5,18 @@ import Container from '@/components/Container'
 import useAccountsStore from '@/store/useAccountsStore'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const AccountPage = () => {
-   const { logoutAcc } = useAccountsStore();
+   const { users, logoutAcc } = useAccountsStore();
    const router = useRouter();
+
+   useEffect(() => {
+      if(users.length==0){
+         router.push("/")
+      }
+   }, [])
+   
    const handleLogout = () => {
       logoutAcc();
       router.push("/")

@@ -44,7 +44,7 @@ const LoginPage = () => {
                </div>
                <div className="flex justify-between items-center">
                   <Link href={"/login"} className="text-cyan-700 underline">don't have account, register</Link>
-                  <button onClick={handleLogin} className="bg-gray-500 text-gray-50 py-1 px-5 rounded-lg">Register</button>
+                  <button onClick={handleLogin} className="bg-gray-500 text-gray-50 py-1 px-5 rounded-lg cursor-pointer">Register</button>
                </div>
             </div>
          </div>

@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 const DetailCard = ({ product }) => {
    const [ quantity, setQuantity ] = useState(1);
    const [ colorChoose, setColorChoose ] = useState(product.colors[0]);
-   const [ selected, setSelected ] = useState("S")
+   const [ selected, setSelected ] = useState("S");
    const { wishLists, addToWishList } = useWishListsStore();
 
    const handleDecrease = () => {

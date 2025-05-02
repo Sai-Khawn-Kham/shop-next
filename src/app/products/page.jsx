@@ -18,7 +18,7 @@ const ProductsPage = () => {
             </p>
             <div className="grid grid-cols-4 gap-5">
                {products.map((product) => (
-                  <ProductCard key={product.id} product={product} detail={`/products/${product.path}`} />
+                  <ProductCard key={product.id} product={product} detail={`/categories/${product.category}/${product.path}`} />
                ))}
             </div>
          </div>

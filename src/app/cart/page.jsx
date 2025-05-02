@@ -3,14 +3,17 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import CartCard from "@/components/CartCard";
 import Container from "@/components/Container";
+import useAccountsStore from "@/store/useAccountsStore";
 import useCartsStore from "@/store/useCartsStore";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const CartPage = () => {
    const router = useRouter();
-   const { carts, subTotal, calSubTotal, shipping, calShipping, tax, calTax, netTotal, calNetTotal } = useCartsStore();
+   const { users } = useAccountsStore();
+   const { carts, subTotal, shipping, tax, netTotal, calSubTotal, calShipping, calTax, calNetTotal } = useCartsStore();
 
    useEffect(() => {
       calSubTotal();
@@ -20,15 +23,25 @@ const CartPage = () => {
    }, []);
 
    const handleCheckoutBtn = () => {
-      if(carts.length>0){
-         router.push("/cart/checkout")
+      if(carts.length>0) {
+         if(users.length==0){
+            Swal.fire({
+               icon: "question",
+               title: "Register?",
+               text: "You need account to place order",
+               confirmButtonColor: "#444",
+               showCancelButton: true,
+               cancelButtonColor: "#888"
+            }).then((result) => {
+               if(result.isConfirmed){
+                  router.push("/register")
+               }
+            })
+         } else {
+            router.push("/cart/checkout")
+         }
       } else {
-         Swal.fire({
-            icon: "error",
-            title: "Empty Cart!",
-            text: "You have to add product to cart",
-            confirmButtonColor: "#444"
-         })
+         toast.error("Add product to cart first")
       }
    }
    return (

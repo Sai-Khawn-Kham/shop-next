@@ -3,6 +3,7 @@
 import React from "react";
 import useCartsStore from "@/store/useCartsStore";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const AddToCartBtn = ({ product, size = "S", color, className = "", quantity = 1, }) => {
    const { carts, addCart, quantityIncrease } = useCartsStore();

@@ -1,18 +1,10 @@
 "use client"
 
-import useCartsStore from "@/store/useCartsStore";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
-import Swal from "sweetalert2";
+import React from "react";
 
 const OrderCard = ({ cart }) => {
-   const { calSubTotal } = useCartsStore();
-
-   useEffect(() => {
-     calSubTotal()
-   }, [])
-   
    return (
       <div className="grid grid-cols-4 gap-3 py-4 border-b border-gray-300">
          <div className="">
@@ -26,7 +18,7 @@ const OrderCard = ({ cart }) => {
                />
             </Link>
          </div>
-         <div className="col-span-2 flex flex-col gap-2">
+         <div className="col-span-2 flex flex-col gap-">
             <h3 className="font-bold capitalize">{cart.path.replaceAll("-"," ")}</h3>
 
             <div className="text-gray-500 flex gap-2">
@@ -42,6 +34,10 @@ const OrderCard = ({ cart }) => {
             <div className="flex gap-1 text-gray-500">
                Qty:
                <span>{cart.quantity}</span>
+            </div>
+            <div className="flex gap-1 text-gray-500">
+               Price:
+               <span>{cart.price.discount?cart.price.discount:cart.price.original}</span>
             </div>
          </div>
          <div>

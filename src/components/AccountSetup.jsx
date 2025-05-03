@@ -24,7 +24,7 @@ const AccountSetup = ({ setup }) => {
    const [ oldPassword, setOldPassword ] = useState("")
    const [ newPassword, setNewPassword ] = useState("")
    const [ confirmNewPassword, setConfirmNewPassword ] = useState("")
-   const [ phone, setPhone ] = useState(user&&user.phone?user.phone:0)
+   const [ phone, setPhone ] = useState(user&&user.phone?user.phone:"09")
    const [ address, setAddress ] = useState("")
    const router = useRouter();
 
@@ -98,9 +98,9 @@ const AccountSetup = ({ setup }) => {
             <h2 className='uppercase font-bold text-2xl'>my account</h2>
             <p className='text-gray-500'>Manage your personal details</p>
             <div className="flex flex-col md:flex-row gap-5 my-5">
-               <div className="md:min-h-79 flex md:flex-col gap-1 border border-gray-300 rounded p-1">
+               <div className="md:min-h-79 flex md:flex-col gap-1 border border-gray-300 rounded py-1 px-1">
                   <div className='grow flex md:block overflow-auto hsb'>
-                     <p onClick={handlePersonal} className='flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
+                     <p onClick={handlePersonal} className='md:w-40 flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
                         <BsPerson /><span className='capitalize'>personal</span>
                      </p>
                      <p onClick={handleSecurity} className='flex gap-1 items-center hover:bg-gray-100 py-1 px-2 rounded text-gray-500 active:text-cyan-500'>
@@ -118,9 +118,8 @@ const AccountSetup = ({ setup }) => {
                      </p>
                   </div>
                </div>
-               <div className="grow">
                   {state == "personal" && (
-                     <div className="flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-5">
+                     <div className="grow flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-5">
                         <div className="flex flex-col gap-1">
                            <label htmlFor="name">Name</label>
                            {user && user.name ? (
@@ -156,7 +155,7 @@ const AccountSetup = ({ setup }) => {
                      </div>
                   )}
                   {state == "security" && (
-                     <div className="flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-3">
+                     <div className="grow flex flex-col gap-3 border border-gray-300 rounded px-3 pt-3 pb-3">
                         <div className="flex flex-col gap-1">
                            <label htmlFor="oldPassword">Old Password</label>
                            <input type="text" value={oldPassword} onChange={handleOldPassword} name="oldPassword" id="oldPassword" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" placeholder='Old Password' required />
@@ -178,23 +177,21 @@ const AccountSetup = ({ setup }) => {
                      </div>
                   )}
                   {state == "orders" && (
-                     <div className="flex flex-col border border-gray-300 rounded overflow-auto hsb">
+                     <div className="grow flex flex-col border border-gray-300 rounded overflow-auto hsb">
                         <table>
                            <thead>
                               <tr className='border-b border-gray-300'>
                                  <th className='py-3 px-2 text-start'>Order ID</th>
-                                 <th className='py-3 px-2 text-start'>Customer Name</th>
-                                 <th className='py-3 px-2 text-start'>Customer Email</th>
+                                 <th className='py-3 px-2 text-start'>Net Total</th>
                                  <th className='py-3 px-2 '>Date</th>
                                  <th className='py-3 px-2 '>Action</th>
                               </tr>
                            </thead>
                            <tbody>
-                              {orders.map((el) => (
+                              {orders.filter((el) => el.customer.email==(user&&user.email) ).map((el) => (
                                  <tr key={el.id} className='text-gray-600 border-b last:border-none odd:bg-gray-100 even:bg-gray-50 border-gray-300'>
                                     <td className='py-1 px-2'>{el.orderId}</td>
-                                    <td className='py-1 px-2'>{el.customer.name}</td>
-                                    <td className='py-1 px-2'>{el.customer.email}</td>
+                                    <td className='py-1 px-2'>{el.netTotal}</td>
                                     <OrderDate date={el.date} />
                                     <td><Link href={`/cart/checkout/confirm-order-${el.id}`} className='flex justify-center items-center'><BsArrowRight /></Link></td>
                                  </tr>
@@ -203,7 +200,6 @@ const AccountSetup = ({ setup }) => {
                         </table>
                      </div>
                   )}
-               </div>
             </div>
          </div>
       </Container>

@@ -6,8 +6,8 @@ import React from "react";
 
 const OrderCard = ({ cart }) => {
    return (
-      <div className="grid grid-cols-4 gap-3 py-2 border-b border-gray-300">
-         <div className="">
+      <div className="grid grid-cols-4 gap-3 py-4 border-b border-gray-300">
+         <div className="flex justify-center items-center">
             <Link href={`/products/${cart.path}`} className="inline-block">
                <Image
                   src={cart.img}

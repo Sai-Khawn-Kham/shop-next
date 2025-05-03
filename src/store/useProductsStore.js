@@ -12,7 +12,7 @@ const useProductStore = create((set) => ({
          colors: ["white", "black"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 2,
@@ -24,7 +24,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 3,
@@ -36,7 +36,7 @@ const useProductStore = create((set) => ({
          colors: ["black"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 4,
@@ -48,7 +48,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 5,
@@ -60,7 +60,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 6,
@@ -72,7 +72,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 7,
@@ -84,7 +84,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 8,
@@ -96,7 +96,7 @@ const useProductStore = create((set) => ({
          colors: ["black"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 9,
@@ -108,7 +108,7 @@ const useProductStore = create((set) => ({
          colors: ["yellow"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 10,
@@ -120,7 +120,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 11,
@@ -132,7 +132,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 12,
@@ -144,7 +144,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 13,
@@ -156,7 +156,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 14,
@@ -168,7 +168,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 15,
@@ -180,7 +180,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
       {
          id: 16,
@@ -193,7 +193,7 @@ const useProductStore = create((set) => ({
          colors: ["white"],
          sizes: ["S", "M", "L", "XL"],
          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates. Aliquam dolorem dignissimos repudiandae! Ratione ipsum quos at.",
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum minima similique voluptates.",
       },
    ],
 }));

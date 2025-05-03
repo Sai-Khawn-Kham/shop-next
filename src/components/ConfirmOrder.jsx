@@ -39,7 +39,7 @@ const OrderConfirmation = ({ params }) => {
             />
          </Container>
          <div className="mt-10 flex justify-center items-center p-3">
-            <div className="flex flex-col md:w-2/5 min-h-[410px] border border-gray-400 rounded p-3">
+            <div className="flex flex-col min-h-[410px] border border-gray-400 rounded p-3">
                <div className="flex justify-between items-center mb-1">
                   <h3 className="text-2xl font-bold uppercase">order id#{order.orderId}</h3>
                   <div className="bg-orange-200 text-orange-800 rounded-lg flex justify-center items-center py-0.5 px-1.5">Pending</div>
@@ -50,7 +50,7 @@ const OrderConfirmation = ({ params }) => {
                      <OrderCard key={cart.id} cart={cart} />
                   ))}
                </div>
-               <div className="grid grid-cols-2 border-b border-gray-300 py-4 text-gray-700">
+               <div className="grid grid-cols-2 border-b border-gray-300 py-3 text-gray-700">
                   <p>SubTotal</p>
                   <p className="text-end">{order.subTotal}</p>
                   <p>Shipping</p>

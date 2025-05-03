@@ -46,7 +46,7 @@ const DetailCard = ({ product }) => {
    }
    return (
       <div className="my-10 grid md:grid-cols-2 gap-5 md:gap-10">
-         <div>
+         <div className="flex justify-center items-center">
             <Image src={product.img} width={395} height={477} alt={product.path} />
          </div>
          <div className="flex flex-col justify-between gap-2">

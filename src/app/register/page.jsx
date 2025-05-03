@@ -30,8 +30,6 @@ const RegisterPage = () => {
    const handleRegister = () => {
       const con1 = accounts.find((account) => account.email==email)?false:true;
       const con2 = password==confirmPassword;
-      console.log(con1);
-      console.log(con2);
       if(con1 && con2) {
          registerAcc({
             id: accounts.length+1,
@@ -47,7 +45,7 @@ const RegisterPage = () => {
 
    return (
       <div className="flex justify-center items-center w-screen h-screen bg-gray-200 absolute top-0 z-100 p-3">
-         <div className="w-full md:w-2/5 bg-gray-50 p-3 md:p-5 rounded-lg">
+         <div className="w-full md:w-3/5 bg-gray-50 p-3 md:p-5 rounded-lg">
             <h1 className="text-3xl font-bold font-serif text-center">Register</h1>
             <div className="flex flex-col gap-3">
                <div className="flex flex-col gap-1">
@@ -60,11 +58,11 @@ const RegisterPage = () => {
                </div>
                <div className="flex flex-col gap-1">
                   <label htmlFor="password">Password</label>
-                  <input type="text" value={password} onChange={handlePassword} name="password" id="password" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
+                  <input type="password" value={password} onChange={handlePassword} name="password" id="password" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
                </div>
                <div className="flex flex-col gap-1">
                   <label htmlFor="confirmPassword">Confirm Password</label>
-                  <input type="text" value={confirmPassword} onChange={handleConfirmPassword} name="confirmPassword" id="confirmPassword" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
+                  <input type="password" value={confirmPassword} onChange={handleConfirmPassword} name="confirmPassword" id="confirmPassword" className="border border-gray-300 rounded py-1 px-2 focus:outline-none" required />
                </div>
                <div className="flex justify-between items-center">
                   <Link href={"/login"} className="text-cyan-700 active:text-cyan-500 underline">already have account, login</Link>

@@ -45,7 +45,7 @@ const WishListCard = ({wishList}) => {
                <p className={`${wishList.price.discount&&"text-gray-500 line-through"}`}>{wishList.price.original.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}</p>
                <p>{wishList.price.discount&&wishList.price.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}</p>
             </div>
-            <div className="flex flex-col text-gray-500">
+            <div className="flex flex-col md:flex-row md:items-center md:gap-1 text-gray-500">
                Size:
                <div className="flex gap-1">
                   {wishList.sizes.map((size,index) => (
@@ -53,7 +53,7 @@ const WishListCard = ({wishList}) => {
                   ))}
                </div>
             </div>
-            <div className="flex flex-col text-gray-500">
+            <div className="flex flex-col md:flex-row md:items-center md:gap-1 text-gray-500">
                Color:
                <div className="flex gap-1">
                   {wishList.colors.map((color,index) => (

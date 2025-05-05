@@ -41,26 +41,26 @@ const OrderConfirmation = ({ params }) => {
          <div className="mt-10 flex justify-center items-center p-3">
             <div className="flex flex-col min-h-[410px] border border-gray-400 rounded p-3">
                <div className="flex justify-between items-center mb-1">
-                  <h3 className="text-2xl font-bold uppercase">order id#{order.orderId}</h3>
+                  <h3 className="text-2xl font-bold uppercase">order id#{order&&order.orderId}</h3>
                   <div className="bg-orange-200 text-orange-800 rounded-lg flex justify-center items-center py-0.5 px-1.5">Pending</div>
                </div>
                <p className="text-gray-500">Thank you for your purchase. We're processing your order now!</p>
                <div className="grow">
-                  {order.carts.map((cart) => (
+                  {order&&order.carts.map((cart) => (
                      <OrderCard key={cart.id} cart={cart} />
                   ))}
                </div>
                <div className="grid grid-cols-2 border-b border-gray-300 py-3 text-gray-700">
                   <p>SubTotal</p>
-                  <p className="text-end">{order.subTotal}</p>
+                  <p className="text-end">{order&&order.subTotal}</p>
                   <p>Shipping</p>
-                  <p className="text-end">{order.shipping}</p>
+                  <p className="text-end">{order&&order.shipping}</p>
                   <p>Tax</p>
-                  <p className="text-end">{order.tax}</p>
+                  <p className="text-end">{order&&order.tax}</p>
                </div>
                <div className="flex justify-between font-semibold my-3">
                   <p>Total</p>
-                  <p className="text-end">{order.netTotal}</p>
+                  <p className="text-end">{order&&order.netTotal}</p>
                </div>
             </div>
          </div>

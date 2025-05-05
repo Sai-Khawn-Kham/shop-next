@@ -9,10 +9,14 @@ import toast from "react-hot-toast";
 
 const ContactPage = () => {
    const handleClick = () => {
-      document.querySelector("#name").value = "";
-      document.querySelector("#email").value = "";
-      document.querySelector("#message").value = "";
-      toast.success("Message sent")
+      if(document.querySelector("#email").value.split("@")[1]=="gmail.com"){
+         document.querySelector("#name").value = "";
+         document.querySelector("#email").value = "";
+         document.querySelector("#message").value = "";
+         toast.success("Message sent")
+      } else {
+         toast.error("wrong input")
+      }
    }
    return (
       <Container>

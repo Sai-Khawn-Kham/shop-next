@@ -7,6 +7,11 @@ import React from 'react'
 const RootLayout = ({ children }) => {
   return (
    <html lang="en">
+      <head>
+         <meta charset="UTF-8" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>K.Shop</title>
+      </head>
       <body className="flex flex-col min-h-screen">
          <Header />
          <section className="mt-12">

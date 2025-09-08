@@ -90,7 +90,7 @@ const CartPage = () => {
                            <p>Total</p>
                            <p>{netTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                         </div>
-                        <button onClick={handleCheckoutBtn} className="bg-gray-950 text-gray-50 py-1 rounded">
+                        <button onClick={handleCheckoutBtn} className="bg-gray-950 text-gray-50 py-1 rounded hover:cursor-pointer">
                            Process to checkout
                         </button>
                      </div>

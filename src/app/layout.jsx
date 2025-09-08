@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Toaster } from "react-hot-toast";
 import React from 'react'
+import NextTopLoader from "nextjs-toploader";
 
 const RootLayout = ({ children }) => {
   return (
@@ -13,6 +14,7 @@ const RootLayout = ({ children }) => {
          <title>K.Shop</title>
       </head>
       <body className="flex flex-col min-h-screen">
+         <NextTopLoader />
          <Header />
          <section className="mt-12">
             {children}
